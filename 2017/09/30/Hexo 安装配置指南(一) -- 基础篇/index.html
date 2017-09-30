@@ -6,34 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://michaeljiangplus.github.io">
-  <title>Tensorflow With Gpu 安装指南(ubuntu16.04) | MichaelJiang的博客</title>
+  <title>Hexo 安装配置指南(一) -- 基础篇 | MichaelJiang的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
-<meta name="keywords" content="Tensorflow,技术笔记">
+  <meta name="description" content="安装指南1.前言以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。 然后就懒得折腾了">
+<meta name="keywords" content="Hexo,技术笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
-<meta property="og:url" content="https://michaeljiangplus.github.io/2017/09/29/Tensflow安装指南/index.html">
+<meta property="og:title" content="Hexo 安装配置指南(一) -- 基础篇">
+<meta property="og:url" content="https://michaeljiangplus.github.io/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/index.html">
 <meta property="og:site_name" content="MichaelJiang的博客">
-<meta property="og:description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
+<meta property="og:description" content="安装指南1.前言以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。 然后就懒得折腾了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/36941524.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/82470685.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/98797408.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4263411.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4192833.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/11515935.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/96492970.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/45446769.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/63361089.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/39857381.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/12910450.jpg">
-<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
-<meta property="og:updated_time" content="2017-09-29T11:15:52.000Z">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/70865461.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/46308990.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/35540228.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/87517968.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/48545692.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/50193204.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/44418676.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/48875396.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/26787040.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/20825630.jpg">
+<meta property="og:updated_time" content="2017-09-30T13:28:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
-<meta name="twitter:description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
-<meta name="twitter:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/36941524.jpg">
+<meta name="twitter:title" content="Hexo 安装配置指南(一) -- 基础篇">
+<meta name="twitter:description" content="安装指南1.前言以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。 然后就懒得折腾了">
+<meta name="twitter:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/70865461.jpg">
   
     <link rel="alternative" href="/atom.xml" title="MichaelJiang的博客" type="application/atom+xml">
   
@@ -187,168 +184,103 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Tensflow安装指南" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo 安装配置指南(一) -- 基础篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Tensorflow With Gpu 安装指南(ubuntu16.04)
+      Hexo 安装配置指南(一) -- 基础篇
     </h1>
   
 
         
-        <a href="/2017/09/29/Tensflow安装指南/" class="archive-article-date">
-  	<time datetime="2017-09-29T07:41:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+        <a href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/" class="archive-article-date">
+  	<time datetime="2017-09-30T06:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。</p>
-<p>好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。</p>
+        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。</p>
+<p>然后就懒得折腾了，后续不少的技术笔记和文章都是直接卸载有道云笔记上了，后来突然发现了Hexo这个博客框架，感觉非常符合自己对博客的要求，简单明了，对于主题和内容都不需要折腾，上手直接用MarkDown写就好了，倍感欣慰。</p>
+<p>如果你也是不想折腾，就像整理下自己的技术笔记或者想写点东西给其他人看的话，我推荐你也试试用Hexo这个博客框架，他的文档非常的详细，非常适合想写文章的人。(如果比较喜欢折腾的话，也可以试一下Keystonejs这个内容管理框架，开发起来非常的方便好用)</p>
+<p>好啦，废话不多说，下面就是详细的Hexo安装详情了。</p>
 <a id="more"></a>
-<h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h2><p>在安装Tensorflow前我们首先要确定自己的电脑是否支持Gpu Support，以下是确认清单（如果已经核实完毕，可以跳过本章节）</p>
+<h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h2><p>在安装Hexo前请先确认准备工作是否到位(已经做好准备的小伙伴可以直接跳过本章节)</p>
 <ul>
-<li>显卡的品牌必须为<strong>NVIDIA</strong></li>
-<li>显卡必须要在<strong>CUDA</strong>支持列表中-<a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="external">Support GPUs</a></li>
-<li>安装 <strong>Python2.7</strong> 或者 <strong>Python3.x</strong> (可以同时安装2.7和3.x)</li>
-<li>确认你的 <strong>pip</strong> 或 <strong>pip3</strong> 版本 <strong>&gt;= 8.1 </strong></li>
-<li>安装Python版本对应的 <strong>virtualenv</strong></li>
-</ul>
-<h3 id="2-1-确认GPU是否支持CUDA"><a href="#2-1-确认GPU是否支持CUDA" class="headerlink" title="2.1 确认GPU是否支持CUDA"></a>2.1 确认GPU是否支持CUDA</h3><p>1  访问<a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="external">https://developer.nvidia.com/cuda-gpus</a></p>
-<pre><code>![](http://ox0sjjwt5.bkt.clouddn.com/17-9-29/35352778.jpg)
-</code></pre><p>2  查找自己GPU的型号在下面的列表中(<strong>Compute Capability 体现的是你的运算能力,和其他无关</strong>)</p>
-<pre><code>![](http://ox0sjjwt5.bkt.clouddn.com/17-9-29/76156650.jpg)
-</code></pre><h3 id="2-2-安装python"><a href="#2-2-安装python" class="headerlink" title="2.2 安装python"></a>2.2 安装python</h3><h4 id="2-2-1-Pythone-2-7-的安装与验证"><a href="#2-2-1-Pythone-2-7-的安装与验证" class="headerlink" title="2.2.1 Pythone 2.7 的安装与验证"></a>2.2.1 Pythone 2.7 的安装与验证</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 python2.7 发布版本，dev包必须安装，很多用pip安装包都需要编译</span></div><div class="line">$ sudo apt-get install python2.7 python2.7-dev</div><div class="line"><span class="comment"># 校验安装的python 版本</span></div><div class="line">$ python --version</div><div class="line">输出结果: Python 2.7.12</div></pre></td></tr></table></figure>
-<h4 id="2-2-2-Pythone-3-x-的安装与验证"><a href="#2-2-2-Pythone-3-x-的安装与验证" class="headerlink" title="2.2.2 Pythone 3.x 的安装与验证"></a>2.2.2 Pythone 3.x 的安装与验证</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 Python3.x 发布版本，dev包必须安装，很多用pip安装包都需要编译</span></div><div class="line">$ sudo apt-get install python3.6 python3.6-dev</div><div class="line"><span class="comment"># 校验安装的python3 版本</span></div><div class="line">$ python3 --version</div><div class="line">输出结果: Python 3.6.2</div></pre></td></tr></table></figure>
-<h4 id="Topic-安装常见错误"><a href="#Topic-安装常见错误" class="headerlink" title="Topic : 安装常见错误"></a>Topic : 安装常见错误</h4><ul>
-<li>Question 1 : 无法定位软件包</li>
-</ul>
-<!-- [Ubuntu换源帮助](http://blog.csdn.net/happywho250/article/details/52506321) -->
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 一般是因为无法获取正确的源造成的，请更新Ubuntu的源，并检查输入软件名称是否有误</span></div><div class="line"><span class="comment"># 换源指南 http://blog.csdn.net/happywho250/article/details/52506321</span></div><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure>
-<h3 id="2-3-安装pip"><a href="#2-3-安装pip" class="headerlink" title="2.3 安装pip"></a>2.3 安装pip</h3><h4 id="2-3-1-Python-2-x-pip-安装与校验"><a href="#2-3-1-Python-2-x-pip-安装与校验" class="headerlink" title="2.3.1 Python 2.x pip 安装与校验"></a>2.3.1 Python 2.x pip 安装与校验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 pip</span></div><div class="line">$ sudo apt-get install python-pip</div><div class="line"><span class="comment"># 校验安装的pip 版本</span></div><div class="line">$ pip --version</div><div class="line">输出结果: pip 9.0.1 from /usr/<span class="built_in">local</span>/lib/python2.7</div></pre></td></tr></table></figure>
-<h4 id="2-4-2-Pythone-3-x-pip3-安装与校验"><a href="#2-4-2-Pythone-3-x-pip3-安装与校验" class="headerlink" title="2.4.2 Pythone 3.x pip3 安装与校验"></a>2.4.2 Pythone 3.x pip3 安装与校验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 pip3</span></div><div class="line">$ sudo apt-get install python3-pip</div><div class="line"><span class="comment"># 校验安装的pip3 版本</span></div><div class="line">$ pip3 --version</div><div class="line">输出结果: 输出结果: pip 9.0.1 from /usr/<span class="built_in">local</span>/lib/python3.6</div></pre></td></tr></table></figure>
-<h4 id="2-4-3-更新Pythone对应版本的pip-version-gt-8-1-请跳过该步骤"><a href="#2-4-3-更新Pythone对应版本的pip-version-gt-8-1-请跳过该步骤" class="headerlink" title="2.4.3 更新Pythone对应版本的pip(version &gt;= 8.1 请跳过该步骤)"></a>2.4.3 更新Pythone对应版本的pip(version <strong>&gt;= 8.1</strong> 请跳过该步骤)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Pythone 2.7 对应 pip 的升级方法</span></div><div class="line">$ sudo pip install --upgrade pip</div><div class="line"></div><div class="line"><span class="comment"># Pythone 3.x 对应 pip 的升级方法</span></div><div class="line">$ sudo pip3 install --upgrade pip</div></pre></td></tr></table></figure>
-<h3 id="2-4-安装-virtualenv"><a href="#2-4-安装-virtualenv" class="headerlink" title="2.4 安装 virtualenv"></a>2.4 安装 virtualenv</h3><h4 id="2-4-1-virtualenv-安装与校验"><a href="#2-4-1-virtualenv-安装与校验" class="headerlink" title="2.4.1 virtualenv 安装与校验"></a>2.4.1 virtualenv 安装与校验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 virtualenv</span></div><div class="line">$ sudo python-virtualenv</div><div class="line"><span class="comment"># Pythone 3.x 对应 pip 的升级方法</span></div><div class="line">$ virtualenv --version</div><div class="line">输出结果: 15.1.0</div></pre></td></tr></table></figure>
-<h2 id="3-安装CUDA和cuDNN支持"><a href="#3-安装CUDA和cuDNN支持" class="headerlink" title="3.安装CUDA和cuDNN支持"></a>3.安装CUDA和cuDNN支持</h2><h3 id="3-1-安装NVIDIA驱动"><a href="#3-1-安装NVIDIA驱动" class="headerlink" title="3.1 安装NVIDIA驱动"></a>3.1 安装NVIDIA驱动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 从软件源更新软件列表</span></div><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure>
-<blockquote>
-<p>系统设置-&gt;软件更新-&gt;附加驱动-&gt;选择nvidia最新驱动(384)-&gt;应用更改<br><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/36941524.jpg" alt=""></p>
-</blockquote>
-<h3 id="3-2-安装-CUDA-和-cuDNN-依赖"><a href="#3-2-安装-CUDA-和-cuDNN-依赖" class="headerlink" title="3.2 安装 CUDA 和 cuDNN 依赖"></a>3.2 安装 CUDA 和 cuDNN 依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装CUDA和cuDNN安装依赖</span></div><div class="line">$ sudo apt-get install libcupti-dev</div></pre></td></tr></table></figure>
-<h3 id="3-3-下载安装-CUDA8-0-和-cuDNN-6-0"><a href="#3-3-下载安装-CUDA8-0-和-cuDNN-6-0" class="headerlink" title="3.3 下载安装 CUDA8.0 和 cuDNN 6.0"></a>3.3 下载安装 CUDA8.0 和 cuDNN 6.0</h3><h4 id="3-3-1-CUDA8-0-安装"><a href="#3-3-1-CUDA8-0-安装" class="headerlink" title="3.3.1 CUDA8.0 安装"></a>3.3.1 CUDA8.0 安装</h4><p><strong>Tip</strong> : 为什么不下载 CUDA 9.0 和 cuDNN , 因为Tensflow暂时不支持这个版本 , 如果您安装的时间离 2017-09-29 有一段时间的话 ， 推荐您先搜索目前Tensflow支持CUDA的版本</p>
-<p>1  访问 <a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="external">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
-<p>2  选择对应版本 CUDA ToolKit 8.0 GA2 (Feb 2017)</p>
-<p>  <img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/82470685.jpg" alt=""></p>
-<p>3  下载对应版本的Deb包</p>
+<li><p>Ubuntu</p>
 <ul>
-<li>Case 1 ：Deb-Local版下载(推荐)</li>
+<li>npm</li>
+<li>node.js</li>
+<li>npm或者cnpm(由于墙的缘故，国内推荐使用cnpm)</li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/98797408.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装Deb的本地版本</span></div><div class="line">$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb</div><div class="line">$ sudo apt-get update</div><div class="line"><span class="comment"># 请注意必须要使用cuda-8.0，不然将会现在现在的最新版本</span></div><div class="line">$ sudo apt-get install cuda-8.0</div></pre></td></tr></table></figure>
+</li>
+<li><p>Windows</p>
 <ul>
-<li>Case 2 ：Deb-Network版下载(不推荐,仅当Local版本无法使用时作为代替)</li>
+<li>gitbash</li>
+<li>node.js</li>
+<li>npm或者cnpm(由于墙的缘故，国内推荐使用cnpm)</li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4263411.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装Deb的网络版本</span></div><div class="line">$ sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb</div><div class="line">$ sudo apt-get update</div><div class="line"><span class="comment"># 请注意必须要使用cuda-8.0，不然将会现在现在的最新版本</span></div><div class="line">$ sudo apt-get install cuda-8.0</div></pre></td></tr></table></figure>
-<h4 id="3-3-2-cuDNN-安装"><a href="#3-3-2-cuDNN-安装" class="headerlink" title="3.3.2 cuDNN 安装"></a>3.3.2 cuDNN 安装</h4><p>1  访问 <a href="https://developer.nvidia.com/cudnn" target="_blank" rel="external">https://developer.nvidia.com/cudnn</a> 点击Download后注册登录</p>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4192833.jpg" alt=""></p>
-<p>2  下载 cuDNN v6.0 Library for Linux</p>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/11515935.jpg" alt=""></p>
-<p>3  查看下载后的文件(如图所示下载的内容应该是一个.tgz文件)<br><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/96492970.jpg" alt=""></p>
-<p>4  在terminal中输入以下命令安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装指南 (请在安装完CUDA后再安装cuDNN)</span></div><div class="line">$ tar xvzf cudnn-8.0-linux-x64-v6.0.tgz</div><div class="line">$ sudo cp cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/include</div><div class="line">$ sudo cp cuda/lib64/libcudnn* /usr/<span class="built_in">local</span>/cuda/lib64</div><div class="line">$ sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/lib64/libcudnn*</div></pre></td></tr></table></figure>
-<h4 id="3-3-3-配置-GPU-Support-的环境依赖"><a href="#3-3-3-配置-GPU-Support-的环境依赖" class="headerlink" title="3.3.3 配置 GPU Support 的环境依赖"></a>3.3.3 配置 GPU Support 的环境依赖</h4><p>以下两种方法你可以<strong>任选一种</strong>配置环境变量</p>
+</li>
+</ul>
+<h3 id="2-1-Ubuntu-配置安装环境"><a href="#2-1-Ubuntu-配置安装环境" class="headerlink" title="2.1 Ubuntu 配置安装环境"></a>2.1 Ubuntu 配置安装环境</h3><p>Ubuntu系统安装Nodejs有很多种方法，但是一般像apt-get等方法安装的nodejs往往不是尽心版本，在这里我推荐一种简单的方法确保你的nodejs版本是最新的发布版(推荐在较好网络环境下使用)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 如果还没有npm的小伙伴需要先安装npm</span></div><div class="line">$ sudo apt-get install npm</div><div class="line"><span class="comment"># node有一个模块叫n，是专门用来管理node.js的版本的，我们可以通过npm来安装这个模块</span></div><div class="line">$ sudo npm install -g n</div><div class="line"><span class="comment"># 然后安装或者更新node.js到最新稳定版</span></div><div class="line">$ sudo n stable</div><div class="line"><span class="comment"># 测试是否安装成功</span></div><div class="line">$ node -v</div></pre></td></tr></table></figure>
+<h3 id="2-2-Windows平台-配置安装环境"><a href="#2-2-Windows平台-配置安装环境" class="headerlink" title="2.2 Windows平台 配置安装环境"></a>2.2 Windows平台 配置安装环境</h3><p>waiting for next</p>
+<h3 id="3-Hexo-基础安装配置"><a href="#3-Hexo-基础安装配置" class="headerlink" title="3. Hexo 基础安装配置"></a>3. Hexo 基础安装配置</h3><p>在已经进行完准备工作后我们就可以开始进行Hexo的安装配置了，Windows请在GitBash环境下进行安装，Ubuntu则直接在terminal中进行安装操作，接下来所有使用cnpm的地方，你都可以用cnpm代替．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 首先我们需要在全局安装hexo的命令</span></div><div class="line">$ sudo npm install hexo-cli -g</div><div class="line"><span class="comment"># 在安装完成后,就可以创建hexo的项目了</span></div><div class="line">$ hexo init blog   <span class="comment"># blog 是存放博客的文件夹名</span></div><div class="line"><span class="comment"># 打开创建的文件夹</span></div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line"><span class="comment"># 通过cnpm安装相关的依赖</span></div><div class="line">$ sudo cnpm install</div><div class="line"><span class="comment"># 运行hexo的服务</span></div><div class="line">$　hexo server</div><div class="line"><span class="comment"># ----------------------------</span></div><div class="line"><span class="comment"># INFO  Start processing</span></div><div class="line"><span class="comment"># INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span></div></pre></td></tr></table></figure>
+<p>打开浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/70865461.jpg" alt=""></p>
+<h3 id="4-Hexo-主题配置"><a href="#4-Hexo-主题配置" class="headerlink" title="4. Hexo 主题配置"></a>4. Hexo 主题配置</h3><p>虽然我们的网站已经运行起来了,看起来也不错,但是如果我们希望使用其他人的主题怎么办呢?</p>
+<p>在blog文件夹上有一个配置用的文件,他的名字叫做_config.yml这就是Hexo中用来配置网站的文件,在里面你可以配置这个网站的站点信息,也可以配置静态页面发布的地址.</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/46308990.jpg" alt=""></p>
+<h3 id="4-1-Hexo-主题推荐"><a href="#4-1-Hexo-主题推荐" class="headerlink" title="4.1 Hexo 主题推荐"></a>4.1 Hexo 主题推荐</h3><p>在进行网站配置前,我先给大家推荐几个主题好了.(我个人选用的是yilia,这个博客比较简介,而且主题配置文件非常的清晰)</p>
 <ul>
-<li>case one : <strong>在.bash_profile中配置环境变量</strong></li>
+<li><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在terminal中输入以下命令：</span></div><div class="line">$ sudo gedit ~/.bash_profile</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在文本中新增环境配置：</div><div class="line">export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;</div><div class="line">export CUDA_HOME=/usr/local/cuda</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#保存后，在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/35540228.jpg" alt=""></p>
 <ul>
-<li>case two : <strong>在.bash_profile中配置环境变量</strong></li>
+<li><a href="https://github.com/henryhuang/oishi" target="_blank" rel="external">hexo-theme-oishi</a></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在terminal中输入以下命令：</span></div><div class="line">$ sudo gedit ~/.bashrc</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在文本中新增环境配置：</div><div class="line">export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;  </div><div class="line">export CUDA_HOME=/usr/local/cuda</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#保存后，在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure>
-<h2 id="4-安装Tensorflow"><a href="#4-安装Tensorflow" class="headerlink" title="4.安装Tensorflow"></a>4.安装Tensorflow</h2><h3 id="4-1-Pythone-2-7-安装Tensorflow"><a href="#4-1-Pythone-2-7-安装Tensorflow" class="headerlink" title="4.1 Pythone 2.7 安装Tensorflow"></a>4.1 Pythone 2.7 安装Tensorflow</h3><p>1  <strong>首先找到你打算安装Tensorflow环境的位置(本教程中安装的位置为~目录下)</strong></p>
-<p>2  <strong>在terminal中输入以下命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-gpu //tensorflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-gpu) $ pip install --upgrade tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages tensorflow //tensorflow 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow) $ pip install --upgrade tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow) $ deactivate</div></pre></td></tr></table></figure>
-<h3 id="4-2-Pythone-3-x-的Tensorflow安装"><a href="#4-2-Pythone-3-x-的Tensorflow安装" class="headerlink" title="4.2 Pythone 3.x 的Tensorflow安装"></a>4.2 Pythone 3.x 的Tensorflow安装</h3><p>1  <strong>首先找到你打算安装Tensflow环境的位置(教程中安装的位置为~目录下)</strong></p>
-<p>2  <strong>在terminal中输入以下命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-p3-gpu //tensorflow-p3-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3-gpu) $ pip3 install tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-p3 //tensflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3) $ pip3 install tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3) $ deactivate</div></pre></td></tr></table></figure>
-<h3 id="4-3-测试Tensorflow安装结果"><a href="#4-3-测试Tensorflow安装结果" class="headerlink" title="4.3 测试Tensorflow安装结果"></a>4.3 测试Tensorflow安装结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 : Python 2.7 Tensorflow 测试</span></div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-gpu/bin/activate // 请将<span class="built_in">source</span>后的地址换成您虚拟文件夹所在地址</div><div class="line">$ python </div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div><div class="line">Hello, TensorFlow!</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = tf.constant(10)</div><div class="line">&gt;&gt;&gt; b = tf.constant(32)</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a + b))</div><div class="line">42</div><div class="line"></div><div class="line"><span class="comment"># Case 2 : Python 3.x Tensorflow 测试</span></div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate // 请将<span class="built_in">source</span>后的地址换成您虚拟文件夹所在地址</div><div class="line">$ python3</div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div><div class="line">Hello, TensorFlow!</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = tf.constant(10)</div><div class="line">&gt;&gt;&gt; b = tf.constant(32)</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a + b))</div><div class="line">42</div></pre></td></tr></table></figure>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/87517968.jpg" alt=""></p>
 <ul>
-<li>Topic 1：如果是GPU支持版本的话，在Terminal中会输出GPU型号和训练时间</li>
+<li><a href="https://github.com/levonlin/Tinnypp" target="_blank" rel="external">hexo-theme-Tinnypp</a></li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/45446769.jpg" alt=""></p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/48545692.jpg" alt=""></p>
 <ul>
-<li>Topic 2：细心的同学会发现除了成功信息外会有不少警告信息，这说明你的CPU并没有达到最高效率，如果希望提高速度去掉这几个Warning的话，你需要下载Tensorflow源码自己进行打包编译</li>
+<li><a href="https://github.com/yunlzheng/hexo-themes-writing" target="_blank" rel="external">hexo-theme-writing</a></li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/63361089.jpg" alt=""></p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/50193204.jpg" alt=""></p>
 <ul>
-<li>Topic 3：GPU版本如果在导入Tensorflow的时候出现bug，请参考以下方式修改CUDA文件权限</li>
+<li><a href="https://github.com/daisygao/hexo-themes-cover" target="_blank" rel="external">hexo-theme-cover</a></li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/39857381.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/lib64/</div><div class="line">$ sudo rm -rf libcudnn.so libcudnn.so.6</div><div class="line">$ sudo chmod u=rwx,g=rx,o=rx libcudnn.so.6.0.21</div><div class="line">$ sudo ln -s libcudnn.so.6.0.21  libcudnn.so.6</div><div class="line">$ sudo ln -s libcudnn.so.6 libcudnn.so</div></pre></td></tr></table></figure>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/44418676.jpg" alt=""></p>
+<h3 id="4-2-Hexo-主题配置"><a href="#4-2-Hexo-主题配置" class="headerlink" title="4.2 Hexo 主题配置"></a>4.2 Hexo 主题配置</h3><p>那么接下来进入正题,首先是如何进行主题的安装,上述Hexo的主题中一般已经表明了如何安装他们的主题,除了他们表明的方法外,直接从github下载主题放在blog/themes中即可</p>
+<p>下面我将用yilia作为演示更换Hexo的主题和配置</p>
 <ul>
-<li>Topic 4：如果在程序运行的过程始终出现CUDA out of memory，这是因为Tensorflow申请的GPU内存大于GPU能提供的内存</li>
+<li><strong>Step one:</strong> 下载主题</li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在代码session定义前新增配置：</span></div><div class="line">&gt;&gt;&gt; config = tf.ConfigProto(allow_soft_placement=True)</div><div class="line"><span class="comment"># 最多占gpu资源的70%</span></div><div class="line">&gt;&gt;&gt; gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)</div><div class="line"><span class="comment"># 开始不会给tensorflow全部gpu资源 而是按需增加</span></div><div class="line">&gt;&gt;&gt; config.gpu_options.allow_growth = True</div><div class="line">&gt;&gt;&gt; sess = tf.Session(config=config)</div></pre></td></tr></table></figure>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="附录1-：-Ubuntu常见问题解决方法"><a href="#附录1-：-Ubuntu常见问题解决方法" class="headerlink" title="附录1 ： Ubuntu常见问题解决方法"></a>附录1 ： Ubuntu常见问题解决方法</h3><ul>
-<li>Question 1： E 无法定位软件包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 更换Ubuntu的软件源，并检查是否有输错软件名称</span></div><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/happywho250/article/details/52506321" target="_blank" rel="external">Ubuntu换源帮助</a></p>
-<h3 id="附录2-：-CUDA-和-cuDNN-安装常见问题解决方法"><a href="#附录2-：-CUDA-和-cuDNN-安装常见问题解决方法" class="headerlink" title="附录2 ： CUDA 和 cuDNN 安装常见问题解决方法"></a>附录2 ： CUDA 和 cuDNN 安装常见问题解决方法</h3><ul>
-<li>Question 1： CUDA文件权限不足,无法被链接</li>
-</ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/12910450.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/lib64/</div><div class="line">$ sudo rm -rf libcudnn.so libcudnn.so.6</div><div class="line">$ sudo chmod u=rwx,g=rx,o=rx libcudnn.so.6.0.21 </div><div class="line">$ sudo ln -s libcudnn.so.6.0.21  libcudnn.so.6</div><div class="line">$ sudo ln -s libcudnn.so.6 libcudnn.so</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 直接在blog文件夹下用git命令克隆yilia的主题</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure>
 <ul>
-<li>Question 2： CUDA out of memory</li>
+<li><strong>Step Two:</strong> 安装主题</li>
 </ul>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在代码session定义前新增配置：</span></div><div class="line">&gt;&gt;&gt; config = tf.ConfigProto(allow_soft_placement=True)</div><div class="line"><span class="comment"># 最多占gpu资源的70%</span></div><div class="line">&gt;&gt;&gt; gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)</div><div class="line"><span class="comment"># 开始不会给tensorflow全部gpu资源 而是按需增加</span></div><div class="line">&gt;&gt;&gt; config.gpu_options.allow_growth = True</div><div class="line">&gt;&gt;&gt; sess = tf.Session(config=config)</div></pre></td></tr></table></figure>
-<h3 id="附录3-：-参考文献"><a href="#附录3-：-参考文献" class="headerlink" title="附录3 ： 参考文献"></a>附录3 ： 参考文献</h3><ul>
-<li><a href="http://blog.csdn.net/zhaoyu106/article/details/52793183" target="_blank" rel="external">ubuntu16.04下安装TensorFlow(GPU加速)—-详细图文教程</a> by 蓝色荣誉</li>
-<li><a href="http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/os_setup.html" target="_blank" rel="external">TensorFlow 官方文档中文版</a> by 极客学院</li>
-<li><a href="https://www.tensorflow.org/install/install_linux#InstallingVirtualenv" target="_blank" rel="external">Installing TensorFlow on Ubuntu</a> by Tensorflow官网</li>
-<li><a href="http://www.cnblogs.com/platero/p/4118139.html" target="_blank" rel="external">NVIDIA CuDNN 安装说明</a> by 普兒</li>
-<li><a href="http://blog.csdn.net/wangkun1340378/article/details/72782593" target="_blank" rel="external">NVIDIA CuDNN 安装说明</a> by 无奈的小心酸</li>
+<p>下图是Hexo主页的_config.yml,在里面你能找到theme这个字段</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/48875396.jpg" alt=""></p>
+<p>如果需要替换成yilia这个主题的话,你只需要将landscape这个字段换成yilia,其他主题也是一样的</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/26787040.jpg" alt=""></p>
+<p>结果展示</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/20825630.jpg" alt=""></p>
+<ul>
+<li><strong>Step Three</strong> 配置主题</li>
 </ul>
+<p>在更换完配置后,你是不是发现还有很多地方感觉怪怪的?没错,这是因为你现在用的还是主题默认的配置,从文字的显示到头像的内容,都需要你进行重新配置,这个配置文件就存在与/blog/themes/yilia中的_config.yml中(其他主题会有不同的配置方法,但是都是在主题下的_config.yml中)</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 主题默认配置</span></div><div class="line"></div><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="string">主页:</span> <span class="string">/</span></div><div class="line">  <span class="string">随笔:</span> <span class="string">/tags/随笔/</span></div><div class="line"></div><div class="line"><span class="comment"># SubNav</span></div><div class="line"><span class="attr">subnav:</span></div><div class="line"><span class="attr">  github:</span> <span class="string">"#"</span></div><div class="line"><span class="attr">  weibo:</span> <span class="string">"#"</span></div><div class="line"><span class="attr">  rss:</span> <span class="string">"#"</span></div><div class="line"><span class="attr">  zhihu:</span> <span class="string">"#"</span></div><div class="line">  <span class="comment">#qq: "#"</span></div><div class="line">  <span class="comment">#weixin: "#"</span></div><div class="line">  <span class="comment">#jianshu: "#"</span></div><div class="line">  <span class="comment">#douban: "#"</span></div><div class="line">  <span class="comment">#segmentfault: "#"</span></div><div class="line">  <span class="comment">#bilibili: "#"</span></div><div class="line">  <span class="comment">#acfun: "#"</span></div><div class="line">  <span class="comment">#mail: "mailto:litten225@qq.com"</span></div><div class="line">  <span class="comment">#facebook: "#"</span></div><div class="line">  <span class="comment">#google: "#"</span></div><div class="line">  <span class="comment">#twitter: "#"</span></div><div class="line">  <span class="comment">#linkedin: "#"</span></div><div class="line"></div><div class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></div><div class="line"></div><div class="line"><span class="comment"># 是否需要修改 root 路径</span></div><div class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></div><div class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></div><div class="line"><span class="attr">root:</span> </div><div class="line"></div><div class="line"><span class="comment"># Content</span></div><div class="line"></div><div class="line"><span class="comment"># 文章太长，截断按钮文字</span></div><div class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></div><div class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></div><div class="line"><span class="attr">show_all_link:</span> <span class="string">'展开全文'</span></div><div class="line"><span class="comment"># 数学公式</span></div><div class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></div><div class="line"><span class="comment"># 是否在新窗口打开链接</span></div><div class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 打赏</span></div><div class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></div><div class="line"><span class="attr">reward_type:</span> <span class="number">2</span></div><div class="line"><span class="comment"># 打赏wording</span></div><div class="line"><span class="attr">reward_wording:</span> <span class="string">'谢谢你请我吃糖果'</span></div><div class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></div><div class="line"><span class="attr">alipay:</span> </div><div class="line"><span class="comment"># 微信二维码图片地址</span></div><div class="line"><span class="attr">weixin:</span> </div><div class="line"></div><div class="line"><span class="comment"># 目录</span></div><div class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></div><div class="line"><span class="attr">toc:</span> <span class="number">1</span></div><div class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></div><div class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 目录为空时的提示</span></div><div class="line"><span class="attr">toc_empty_wording:</span> <span class="string">'目录，不存在的…'</span></div><div class="line"></div><div class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></div><div class="line"><span class="attr">top:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># Miscellaneous</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">favicon:</span> <span class="string">/favicon.png</span></div><div class="line"></div><div class="line"><span class="comment">#你的头像url</span></div><div class="line"><span class="attr">avatar:</span></div><div class="line"></div><div class="line"><span class="comment">#是否开启分享</span></div><div class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span></div><div class="line"><span class="comment">#不需要使用某项，直接设置值为false，或注释掉</span></div><div class="line"><span class="comment">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span></div><div class="line"></div><div class="line"><span class="comment">#1、多说</span></div><div class="line"><span class="attr">duoshuo:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#2、网易云跟帖</span></div><div class="line"><span class="attr">wangyiyun:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#3、畅言</span></div><div class="line"><span class="attr">changyan_appid:</span> <span class="literal">false</span></div><div class="line"><span class="attr">changyan_conf:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span></div><div class="line"><span class="attr">disqus:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#5、Gitment</span></div><div class="line"><span class="attr">gitment_owner:</span> <span class="literal">false</span>      <span class="comment">#你的 GitHub ID</span></div><div class="line"><span class="attr">gitment_repo:</span> <span class="string">''</span>          <span class="comment">#存储评论的 repo</span></div><div class="line"><span class="attr">gitment_oauth:</span></div><div class="line"><span class="attr">  client_id:</span> <span class="string">''</span>           <span class="comment">#client ID</span></div><div class="line"><span class="attr">  client_secret:</span> <span class="string">''</span>       <span class="comment">#client secret</span></div><div class="line"></div><div class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></div><div class="line"><span class="attr">style:</span></div><div class="line">  <span class="comment"># 头像上面的背景颜色</span></div><div class="line"><span class="attr">  header:</span> <span class="string">'#4d4d4d'</span></div><div class="line">  <span class="comment"># 右滑板块背景</span></div><div class="line"><span class="attr">  slider:</span> <span class="string">'linear-gradient(200deg,#a0cfe4,#e8c37e)'</span></div><div class="line"></div><div class="line"><span class="comment"># slider的设置</span></div><div class="line"><span class="attr">slider:</span></div><div class="line">  <span class="comment"># 是否默认展开tags板块</span></div><div class="line"><span class="attr">  showTags:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 智能菜单</span></div><div class="line"><span class="comment"># 如不需要，将该对应项置为false</span></div><div class="line"><span class="comment"># 比如</span></div><div class="line"><span class="comment">#smart_menu:</span></div><div class="line"><span class="comment">#  friends: false</span></div><div class="line"><span class="attr">smart_menu:</span></div><div class="line"><span class="attr">  innerArchive:</span> <span class="string">'所有文章'</span></div><div class="line"><span class="attr">  friends:</span> <span class="string">'友链'</span></div><div class="line"><span class="attr">  aboutme:</span> <span class="string">'关于我'</span></div><div class="line"></div><div class="line"><span class="attr">friends:</span></div><div class="line">  <span class="string">友情链接1:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接2:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接3:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接4:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接5:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接6:</span> <span class="attr">http://localhost:4000/</span></div><div class="line"></div><div class="line"><span class="attr">aboutme:</span> <span class="string">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</span></div></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 个人定制后的配置</span></div><div class="line"><span class="comment"># Header</span></div><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="string">My</span> <span class="attr">Blog:</span> <span class="attr">https://michaeljiang.me</span></div><div class="line"><span class="attr">  GitPage:</span> <span class="attr">https://michaeljiangplus.github.io</span></div><div class="line">  <span class="string">主页:</span> <span class="string">/</span></div><div class="line">  <span class="string">技术笔记:</span> <span class="string">/tags/技术笔记/</span></div><div class="line">  <span class="string">项目日志:</span> <span class="string">/tags/项目日志/</span></div><div class="line"></div><div class="line"><span class="comment"># SubNav</span></div><div class="line"><span class="attr">subnav:</span></div><div class="line"><span class="attr">  github:</span> <span class="string">"https://github.com/MichaelJiangPlus"</span></div><div class="line"><span class="attr">  zhihu:</span> <span class="string">"https://www.zhihu.com/people/jiang-zhan-xiang/activities"</span></div><div class="line"><span class="attr">  jianshu:</span> <span class="attr">http://www.jianshu.com/u/b4a9d5c2f31d</span>  </div><div class="line"><span class="attr">  rss:</span> <span class="string">"#"</span></div><div class="line"></div><div class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></div><div class="line"></div><div class="line"><span class="comment"># 是否需要修改 root 路径</span></div><div class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></div><div class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></div><div class="line"><span class="attr">root:</span></div><div class="line"></div><div class="line"><span class="comment"># 文章太长，截断按钮文字</span></div><div class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></div><div class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></div><div class="line"><span class="attr">show_all_link:</span> <span class="string">'展开全文'</span></div><div class="line"><span class="comment"># 数学公式</span></div><div class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 是否在新窗口打开链接</span></div><div class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 打赏</span></div><div class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></div><div class="line"><span class="attr">reward_type:</span> <span class="number">1</span></div><div class="line"><span class="comment"># 打赏wording</span></div><div class="line"><span class="attr">reward_wording:</span> <span class="string">'谢谢'</span></div><div class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></div><div class="line"><span class="attr">alipay:</span> <span class="string">/assets/img/alipay.png</span></div><div class="line"></div><div class="line"><span class="comment"># 目录</span></div><div class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></div><div class="line"><span class="attr">toc:</span> <span class="number">1</span></div><div class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></div><div class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 目录为空时的提示</span></div><div class="line"><span class="attr">toc_empty_wording:</span> <span class="string">'目录，不存在的…'</span></div><div class="line"></div><div class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></div><div class="line"><span class="attr">top:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># Miscellaneous</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/favicon.png</span></div><div class="line"></div><div class="line"><span class="comment">#你的头像url</span></div><div class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></div><div class="line"></div><div class="line"><span class="comment">#是否开启分享</span></div><div class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">#Gitment</span></div><div class="line"><span class="attr">gitment_owner:</span> <span class="string">secrecy</span>       <span class="comment">#你的 GitHub ID</span></div><div class="line"><span class="attr">gitment_repo:</span> <span class="string">secrecy</span>          <span class="comment">#存储评论的 repo</span></div><div class="line"><span class="attr">gitment_oauth:</span></div><div class="line"><span class="attr">  client_id:</span> <span class="string">secrecy</span>           <span class="comment">#client ID</span></div><div class="line"><span class="attr">  client_secret:</span> <span class="string">secrecy</span>       <span class="comment">#client secret</span></div><div class="line"></div><div class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></div><div class="line"><span class="attr">style:</span></div><div class="line">  <span class="comment"># 头像上面的背景颜色</span></div><div class="line"><span class="attr">  header:</span> <span class="string">'#4d4d4d'</span></div><div class="line">  <span class="comment"># 右滑板块背景</span></div><div class="line"><span class="attr">  slider:</span> <span class="string">'linear-gradient(200deg,#a0cfe4,#e8c37e)'</span></div><div class="line"></div><div class="line"><span class="comment"># slider的设置</span></div><div class="line"><span class="attr">slider:</span></div><div class="line">  <span class="comment"># 是否默认展开tags板块</span></div><div class="line"><span class="attr">  showTags:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 智能菜单</span></div><div class="line"><span class="attr">smart_menu:</span></div><div class="line"><span class="attr">  innerArchive:</span> <span class="string">'所有文章'</span></div><div class="line"><span class="attr">  aboutme:</span> <span class="string">'关于我'</span></div><div class="line"></div><div class="line"><span class="attr">aboutme:</span> <span class="string">还在迷茫阶段&lt;br&gt;目前正在探索:&lt;br&gt;&lt;br&gt;前端&lt;br&gt;Tensorflow</span></div></pre></td></tr></table></figure>
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -359,7 +291,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -419,7 +351,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://michaeljiangplus.github.io/2017/09/29/Tensflow安装指南/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://michaeljiangplus.github.io/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -431,6 +363,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Tensorflow With Gpu 安装指南(ubuntu16.04)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -444,19 +386,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装指南"><span class="toc-number">1.</span> <span class="toc-text">安装指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-前言"><span class="toc-number">1.1.</span> <span class="toc-text">1.前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-准备工作"><span class="toc-number">1.2.</span> <span class="toc-text">2.准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-确认GPU是否支持CUDA"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 确认GPU是否支持CUDA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-安装python"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 安装python</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-Pythone-2-7-的安装与验证"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1 Pythone 2.7 的安装与验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-Pythone-3-x-的安装与验证"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2 Pythone 3.x 的安装与验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Topic-安装常见错误"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">Topic : 安装常见错误</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-安装pip"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 安装pip</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-Python-2-x-pip-安装与校验"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1 Python 2.x pip 安装与校验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-Pythone-3-x-pip3-安装与校验"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.4.2 Pythone 3.x pip3 安装与校验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-更新Pythone对应版本的pip-version-gt-8-1-请跳过该步骤"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.4.3 更新Pythone对应版本的pip(version >= 8.1 请跳过该步骤)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-安装-virtualenv"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 安装 virtualenv</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-virtualenv-安装与校验"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">2.4.1 virtualenv 安装与校验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装CUDA和cuDNN支持"><span class="toc-number">1.3.</span> <span class="toc-text">3.安装CUDA和cuDNN支持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-安装NVIDIA驱动"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 安装NVIDIA驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-安装-CUDA-和-cuDNN-依赖"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 安装 CUDA 和 cuDNN 依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-下载安装-CUDA8-0-和-cuDNN-6-0"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 下载安装 CUDA8.0 和 cuDNN 6.0</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-CUDA8-0-安装"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">3.3.1 CUDA8.0 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-cuDNN-安装"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">3.3.2 cuDNN 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-配置-GPU-Support-的环境依赖"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3.3.3 配置 GPU Support 的环境依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装Tensorflow"><span class="toc-number">1.4.</span> <span class="toc-text">4.安装Tensorflow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Pythone-2-7-安装Tensorflow"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 Pythone 2.7 安装Tensorflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Pythone-3-x-的Tensorflow安装"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 Pythone 3.x 的Tensorflow安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-测试Tensorflow安装结果"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 测试Tensorflow安装结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">1.5.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#附录1-：-Ubuntu常见问题解决方法"><span class="toc-number">1.5.1.</span> <span class="toc-text">附录1 ： Ubuntu常见问题解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附录2-：-CUDA-和-cuDNN-安装常见问题解决方法"><span class="toc-number">1.5.2.</span> <span class="toc-text">附录2 ： CUDA 和 cuDNN 安装常见问题解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附录3-：-参考文献"><span class="toc-number">1.5.3.</span> <span class="toc-text">附录3 ： 参考文献</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -478,7 +407,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://michaeljiangplus.github.io/2017/09/29/Tensflow安装指南/",
+  id: "https://michaeljiangplus.github.io/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/",
   owner: 'MichaelJiangPlus',
   repo: 'michaeljiangplus.github.io',
   oauth: {
@@ -594,11 +523,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
               </li>
             
             <div class="clearfix"></div>
