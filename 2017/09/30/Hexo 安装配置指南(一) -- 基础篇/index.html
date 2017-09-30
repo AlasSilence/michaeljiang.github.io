@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/20825630.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/88448439.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/83886678.jpg">
-<meta property="og:updated_time" content="2017-09-30T13:43:46.523Z">
+<meta property="og:updated_time" content="2017-09-30T13:56:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 安装配置指南(一) -- 基础篇">
 <meta name="twitter:description" content="安装指南1.前言以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。 然后就懒得折腾了">
@@ -223,8 +223,8 @@
 <h3 id="2-1-Ubuntu-配置安装环境"><a href="#2-1-Ubuntu-配置安装环境" class="headerlink" title="2.1 Ubuntu 配置安装环境"></a>2.1 Ubuntu 配置安装环境</h3><p>Ubuntu系统安装Nodejs有很多种方法，但是一般像apt-get等方法安装的nodejs往往不是尽心版本，在这里我推荐一种简单的方法确保你的nodejs版本是最新的发布版(推荐在较好网络环境下使用)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 如果还没有npm的小伙伴需要先安装npm</span></div><div class="line">$ sudo apt-get install npm</div><div class="line"><span class="comment"># node有一个模块叫n，是专门用来管理node.js的版本的，我们可以通过npm来安装这个模块</span></div><div class="line">$ sudo npm install -g n</div><div class="line"><span class="comment"># 然后安装或者更新node.js到最新稳定版</span></div><div class="line">$ sudo n stable</div><div class="line"><span class="comment"># 测试是否安装成功</span></div><div class="line">$ node -v</div></pre></td></tr></table></figure>
 <h3 id="2-2-Windows平台-配置安装环境"><a href="#2-2-Windows平台-配置安装环境" class="headerlink" title="2.2 Windows平台 配置安装环境"></a>2.2 Windows平台 配置安装环境</h3><p>waiting for next</p>
-<h3 id="3-Hexo-基础安装配置"><a href="#3-Hexo-基础安装配置" class="headerlink" title="3. Hexo 基础安装配置"></a>3. Hexo 基础安装配置</h3><p>在已经进行完准备工作后我们就可以开始进行Hexo的安装配置了，Windows请在GitBash环境下进行安装，Ubuntu则直接在terminal中进行安装操作，接下来所有使用cnpm的地方，你都可以用cnpm代替．</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 首先我们需要在全局安装hexo的命令</span></div><div class="line">$ sudo npm install hexo-cli -g</div><div class="line"><span class="comment"># 在安装完成后,就可以创建hexo的项目了</span></div><div class="line">$ hexo init blog   <span class="comment"># blog 是存放博客的文件夹名</span></div><div class="line"><span class="comment"># 打开创建的文件夹</span></div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line"><span class="comment"># 通过cnpm安装相关的依赖</span></div><div class="line">$ sudo cnpm install</div><div class="line"><span class="comment"># 运行hexo的服务</span></div><div class="line">$　hexo server</div><div class="line"><span class="comment"># ----------------------------</span></div><div class="line"><span class="comment"># INFO  Start processing</span></div><div class="line"><span class="comment"># INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span></div></pre></td></tr></table></figure>
+<h3 id="3-Hexo-基础安装配置"><a href="#3-Hexo-基础安装配置" class="headerlink" title="3. Hexo 基础安装配置"></a>3. Hexo 基础安装配置</h3><p>在已经进行完准备工作后我们就可以开始进行Hexo的安装配置了，Windows请在GitBash环境下进行安装，Ubuntu则直接在terminal中进行安装操作，接下来所有使用cnpm的地方，你都可以用npm代替．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 首先我们需要在全局安装hexo的命令</span></div><div class="line">$ sudo cnpm install hexo-cli -g</div><div class="line"><span class="comment"># 在安装完成后,就可以创建hexo的项目了</span></div><div class="line">$ hexo init blog   <span class="comment"># blog 是存放博客的文件夹名</span></div><div class="line"><span class="comment"># 打开创建的文件夹</span></div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line"><span class="comment"># 通过cnpm安装相关的依赖</span></div><div class="line">$ sudo cnpm install</div><div class="line"><span class="comment"># 运行hexo的服务</span></div><div class="line">$　hexo server</div><div class="line"><span class="comment"># ----------------------------</span></div><div class="line"><span class="comment"># INFO  Start processing</span></div><div class="line"><span class="comment"># INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span></div></pre></td></tr></table></figure>
 <p>打开浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/70865461.jpg" alt=""></p>
 <h3 id="4-Hexo-主题配置"><a href="#4-Hexo-主题配置" class="headerlink" title="4. Hexo 主题配置"></a>4. Hexo 主题配置</h3><p>虽然我们的网站已经运行起来了,看起来也不错,但是如果我们希望使用其他人的主题怎么办呢?</p>
@@ -292,11 +292,9 @@
 <h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h4 id="附录1-参考文献"><a href="#附录1-参考文献" class="headerlink" title="附录1 : 参考文献"></a>附录1 : 参考文献</h4><ul>
 <li><p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia配置指南</a> by litten</p>
 </li>
-<li><p><a href=""></a> by</p>
+<li><p><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a> by 潘柏信</p>
 </li>
-<li><p><a href=""></a> by</p>
-</li>
-<li><p><a href=""></a> by</p>
+<li><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 快速部署</a> by Hexo官方</p>
 </li>
 </ul>
 
