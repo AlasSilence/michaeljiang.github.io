@@ -6,20 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | MichaelJiang的博客</title>
+  <title>Tensorflow With Gpu 安装指南(ubuntu16.04) | MichaelJiang的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,Tensorflow,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+  <meta name="description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
+<meta name="keywords" content="Tensorflow,技术笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/09/30/hello-world/index.html">
+<meta property="og:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/Tensflow安装指南/index.html">
 <meta property="og:site_name" content="MichaelJiang的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-30T00:31:53.688Z">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/36941524.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/82470685.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/98797408.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4263411.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4192833.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/11515935.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/96492970.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/45446769.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/63361089.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/39857381.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/12910450.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
+<meta property="og:updated_time" content="2017-09-29T11:15:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
+<meta name="twitter:description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
+<meta name="twitter:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/36941524.jpg">
   
     <link rel="alternative" href="/atom.xml" title="MichaelJiang的博客" type="application/atom+xml">
   
@@ -163,43 +177,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Tensflow安装指南" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Tensorflow With Gpu 安装指南(ubuntu16.04)
     </h1>
   
 
         
-        <a href="/2017/09/30/hello-world/" class="archive-article-date">
-  	<time datetime="2017-09-30T00:31:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+        <a href="/2017/09/29/Tensflow安装指南/" class="archive-article-date">
+  	<time datetime="2017-09-29T07:41:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。</p>
+<p>好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。</p>
+<a id="more"></a>
+<h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h2><p>在安装Tensorflow前我们首先要确定自己的电脑是否支持Gpu Support，以下是确认清单（如果已经核实完毕，可以跳过本章节）</p>
+<ul>
+<li>显卡的品牌必须为<strong>NVIDIA</strong></li>
+<li>显卡必须要在<strong>CUDA</strong>支持列表中-<a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="external">Support GPUs</a></li>
+<li>安装 <strong>Python2.7</strong> 或者 <strong>Python3.x</strong> (可以同时安装2.7和3.x)</li>
+<li>确认你的 <strong>pip</strong> 或 <strong>pip3</strong> 版本 <strong>&gt;= 8.1 </strong></li>
+<li>安装Python版本对应的 <strong>virtualenv</strong></li>
+</ul>
+<h3 id="2-1-确认GPU是否支持CUDA"><a href="#2-1-确认GPU是否支持CUDA" class="headerlink" title="2.1 确认GPU是否支持CUDA"></a>2.1 确认GPU是否支持CUDA</h3><p>1  访问<a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="external">https://developer.nvidia.com/cuda-gpus</a></p>
+<pre><code>![](http://ox0sjjwt5.bkt.clouddn.com/17-9-29/35352778.jpg)
+</code></pre><p>2  查找自己GPU的型号在下面的列表中(<strong>Compute Capability 体现的是你的运算能力,和其他无关</strong>)</p>
+<pre><code>![](http://ox0sjjwt5.bkt.clouddn.com/17-9-29/76156650.jpg)
+</code></pre><h3 id="2-2-安装python"><a href="#2-2-安装python" class="headerlink" title="2.2 安装python"></a>2.2 安装python</h3><h4 id="2-2-1-Pythone-2-7-的安装与验证"><a href="#2-2-1-Pythone-2-7-的安装与验证" class="headerlink" title="2.2.1 Pythone 2.7 的安装与验证"></a>2.2.1 Pythone 2.7 的安装与验证</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 python2.7 发布版本，dev包必须安装，很多用pip安装包都需要编译</span></div><div class="line">$ sudo apt-get install python2.7 python2.7-dev</div><div class="line"><span class="comment"># 校验安装的python 版本</span></div><div class="line">$ python --version</div><div class="line">输出结果: Python 2.7.12</div></pre></td></tr></table></figure>
+<h4 id="2-2-2-Pythone-3-x-的安装与验证"><a href="#2-2-2-Pythone-3-x-的安装与验证" class="headerlink" title="2.2.2 Pythone 3.x 的安装与验证"></a>2.2.2 Pythone 3.x 的安装与验证</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 Python3.x 发布版本，dev包必须安装，很多用pip安装包都需要编译</span></div><div class="line">$ sudo apt-get install python3.6 python3.6-dev</div><div class="line"><span class="comment"># 校验安装的python3 版本</span></div><div class="line">$ python3 --version</div><div class="line">输出结果: Python 3.6.2</div></pre></td></tr></table></figure>
+<h4 id="Topic-安装常见错误"><a href="#Topic-安装常见错误" class="headerlink" title="Topic : 安装常见错误"></a>Topic : 安装常见错误</h4><ul>
+<li>Question 1 : 无法定位软件包</li>
+</ul>
+<!-- [Ubuntu换源帮助](http://blog.csdn.net/happywho250/article/details/52506321) -->
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 一般是因为无法获取正确的源造成的，请更新Ubuntu的源，并检查输入软件名称是否有误</span></div><div class="line"><span class="comment"># 换源指南 http://blog.csdn.net/happywho250/article/details/52506321</span></div><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure>
+<h3 id="2-3-安装pip"><a href="#2-3-安装pip" class="headerlink" title="2.3 安装pip"></a>2.3 安装pip</h3><h4 id="2-3-1-Python-2-x-pip-安装与校验"><a href="#2-3-1-Python-2-x-pip-安装与校验" class="headerlink" title="2.3.1 Python 2.x pip 安装与校验"></a>2.3.1 Python 2.x pip 安装与校验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 pip</span></div><div class="line">$ sudo apt-get install python-pip</div><div class="line"><span class="comment"># 校验安装的pip 版本</span></div><div class="line">$ pip --version</div><div class="line">输出结果: pip 9.0.1 from /usr/<span class="built_in">local</span>/lib/python2.7</div></pre></td></tr></table></figure>
+<h4 id="2-4-2-Pythone-3-x-pip3-安装与校验"><a href="#2-4-2-Pythone-3-x-pip3-安装与校验" class="headerlink" title="2.4.2 Pythone 3.x pip3 安装与校验"></a>2.4.2 Pythone 3.x pip3 安装与校验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 pip3</span></div><div class="line">$ sudo apt-get install python3-pip</div><div class="line"><span class="comment"># 校验安装的pip3 版本</span></div><div class="line">$ pip3 --version</div><div class="line">输出结果: 输出结果: pip 9.0.1 from /usr/<span class="built_in">local</span>/lib/python3.6</div></pre></td></tr></table></figure>
+<h4 id="2-4-3-更新Pythone对应版本的pip-version-gt-8-1-请跳过该步骤"><a href="#2-4-3-更新Pythone对应版本的pip-version-gt-8-1-请跳过该步骤" class="headerlink" title="2.4.3 更新Pythone对应版本的pip(version &gt;= 8.1 请跳过该步骤)"></a>2.4.3 更新Pythone对应版本的pip(version <strong>&gt;= 8.1</strong> 请跳过该步骤)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Pythone 2.7 对应 pip 的升级方法</span></div><div class="line">$ sudo pip install --upgrade pip</div><div class="line"></div><div class="line"><span class="comment"># Pythone 3.x 对应 pip 的升级方法</span></div><div class="line">$ sudo pip3 install --upgrade pip</div></pre></td></tr></table></figure>
+<h3 id="2-4-安装-virtualenv"><a href="#2-4-安装-virtualenv" class="headerlink" title="2.4 安装 virtualenv"></a>2.4 安装 virtualenv</h3><h4 id="2-4-1-virtualenv-安装与校验"><a href="#2-4-1-virtualenv-安装与校验" class="headerlink" title="2.4.1 virtualenv 安装与校验"></a>2.4.1 virtualenv 安装与校验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装 virtualenv</span></div><div class="line">$ sudo python-virtualenv</div><div class="line"><span class="comment"># Pythone 3.x 对应 pip 的升级方法</span></div><div class="line">$ virtualenv --version</div><div class="line">输出结果: 15.1.0</div></pre></td></tr></table></figure>
+<h2 id="3-安装CUDA和cuDNN支持"><a href="#3-安装CUDA和cuDNN支持" class="headerlink" title="3.安装CUDA和cuDNN支持"></a>3.安装CUDA和cuDNN支持</h2><h3 id="3-1-安装NVIDIA驱动"><a href="#3-1-安装NVIDIA驱动" class="headerlink" title="3.1 安装NVIDIA驱动"></a>3.1 安装NVIDIA驱动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 从软件源更新软件列表</span></div><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure>
+<blockquote>
+<p>系统设置-&gt;软件更新-&gt;附加驱动-&gt;选择nvidia最新驱动(384)-&gt;应用更改<br><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/36941524.jpg" alt=""></p>
+</blockquote>
+<h3 id="3-2-安装-CUDA-和-cuDNN-依赖"><a href="#3-2-安装-CUDA-和-cuDNN-依赖" class="headerlink" title="3.2 安装 CUDA 和 cuDNN 依赖"></a>3.2 安装 CUDA 和 cuDNN 依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装CUDA和cuDNN安装依赖</span></div><div class="line">$ sudo apt-get install libcupti-dev</div></pre></td></tr></table></figure>
+<h3 id="3-3-下载安装-CUDA8-0-和-cuDNN-6-0"><a href="#3-3-下载安装-CUDA8-0-和-cuDNN-6-0" class="headerlink" title="3.3 下载安装 CUDA8.0 和 cuDNN 6.0"></a>3.3 下载安装 CUDA8.0 和 cuDNN 6.0</h3><h4 id="3-3-1-CUDA8-0-安装"><a href="#3-3-1-CUDA8-0-安装" class="headerlink" title="3.3.1 CUDA8.0 安装"></a>3.3.1 CUDA8.0 安装</h4><p><strong>Tip</strong> : 为什么不下载 CUDA 9.0 和 cuDNN , 因为Tensflow暂时不支持这个版本 , 如果您安装的时间离 2017-09-29 有一段时间的话 ， 推荐您先搜索目前Tensflow支持CUDA的版本</p>
+<p>1  访问 <a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="external">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p>2  选择对应版本 CUDA ToolKit 8.0 GA2 (Feb 2017)</p>
+<p>  <img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/82470685.jpg" alt=""></p>
+<p>3  下载对应版本的Deb包</p>
+<ul>
+<li>Case 1 ：Deb-Local版下载(推荐)</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/98797408.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装Deb的本地版本</span></div><div class="line">$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb</div><div class="line">$ sudo apt-get update</div><div class="line"><span class="comment"># 请注意必须要使用cuda-8.0，不然将会现在现在的最新版本</span></div><div class="line">$ sudo apt-get install cuda-8.0</div></pre></td></tr></table></figure>
+<ul>
+<li>Case 2 ：Deb-Network版下载(不推荐,仅当Local版本无法使用时作为代替)</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4263411.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装Deb的网络版本</span></div><div class="line">$ sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb</div><div class="line">$ sudo apt-get update</div><div class="line"><span class="comment"># 请注意必须要使用cuda-8.0，不然将会现在现在的最新版本</span></div><div class="line">$ sudo apt-get install cuda-8.0</div></pre></td></tr></table></figure>
+<h4 id="3-3-2-cuDNN-安装"><a href="#3-3-2-cuDNN-安装" class="headerlink" title="3.3.2 cuDNN 安装"></a>3.3.2 cuDNN 安装</h4><p>1  访问 <a href="https://developer.nvidia.com/cudnn" target="_blank" rel="external">https://developer.nvidia.com/cudnn</a> 点击Download后注册登录</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4192833.jpg" alt=""></p>
+<p>2  下载 cuDNN v6.0 Library for Linux</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/11515935.jpg" alt=""></p>
+<p>3  查看下载后的文件(如图所示下载的内容应该是一个.tgz文件)<br><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/96492970.jpg" alt=""></p>
+<p>4  在terminal中输入以下命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装指南 (请在安装完CUDA后再安装cuDNN)</span></div><div class="line">$ tar xvzf cudnn-8.0-linux-x64-v6.0.tgz</div><div class="line">$ sudo cp cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/include</div><div class="line">$ sudo cp cuda/lib64/libcudnn* /usr/<span class="built_in">local</span>/cuda/lib64</div><div class="line">$ sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/lib64/libcudnn*</div></pre></td></tr></table></figure>
+<h4 id="3-3-3-配置-GPU-Support-的环境依赖"><a href="#3-3-3-配置-GPU-Support-的环境依赖" class="headerlink" title="3.3.3 配置 GPU Support 的环境依赖"></a>3.3.3 配置 GPU Support 的环境依赖</h4><p>以下两种方法你可以<strong>任选一种</strong>配置环境变量</p>
+<ul>
+<li>case one : <strong>在.bash_profile中配置环境变量</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在terminal中输入以下命令：</span></div><div class="line">$ sudo gedit ~/.bash_profile</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在文本中新增环境配置：</div><div class="line">export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;</div><div class="line">export CUDA_HOME=/usr/local/cuda</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#保存后，在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure>
+<ul>
+<li>case two : <strong>在.bash_profile中配置环境变量</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在terminal中输入以下命令：</span></div><div class="line">$ sudo gedit ~/.bashrc</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在文本中新增环境配置：</div><div class="line">export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;  </div><div class="line">export CUDA_HOME=/usr/local/cuda</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#保存后，在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure>
+<h2 id="4-安装Tensorflow"><a href="#4-安装Tensorflow" class="headerlink" title="4.安装Tensorflow"></a>4.安装Tensorflow</h2><h3 id="4-1-Pythone-2-7-安装Tensorflow"><a href="#4-1-Pythone-2-7-安装Tensorflow" class="headerlink" title="4.1 Pythone 2.7 安装Tensorflow"></a>4.1 Pythone 2.7 安装Tensorflow</h3><p>1  <strong>首先找到你打算安装Tensorflow环境的位置(本教程中安装的位置为~目录下)</strong></p>
+<p>2  <strong>在terminal中输入以下命令：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-gpu //tensorflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-gpu) $ pip install --upgrade tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages tensorflow //tensorflow 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow) $ pip install --upgrade tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow) $ deactivate</div></pre></td></tr></table></figure>
+<h3 id="4-2-Pythone-3-x-的Tensorflow安装"><a href="#4-2-Pythone-3-x-的Tensorflow安装" class="headerlink" title="4.2 Pythone 3.x 的Tensorflow安装"></a>4.2 Pythone 3.x 的Tensorflow安装</h3><p>1  <strong>首先找到你打算安装Tensflow环境的位置(教程中安装的位置为~目录下)</strong></p>
+<p>2  <strong>在terminal中输入以下命令：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-p3-gpu //tensorflow-p3-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3-gpu) $ pip3 install tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-p3 //tensflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3) $ pip3 install tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3) $ deactivate</div></pre></td></tr></table></figure>
+<h3 id="4-3-测试Tensorflow安装结果"><a href="#4-3-测试Tensorflow安装结果" class="headerlink" title="4.3 测试Tensorflow安装结果"></a>4.3 测试Tensorflow安装结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 : Python 2.7 Tensorflow 测试</span></div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-gpu/bin/activate // 请将<span class="built_in">source</span>后的地址换成您虚拟文件夹所在地址</div><div class="line">$ python </div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div><div class="line">Hello, TensorFlow!</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = tf.constant(10)</div><div class="line">&gt;&gt;&gt; b = tf.constant(32)</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a + b))</div><div class="line">42</div><div class="line"></div><div class="line"><span class="comment"># Case 2 : Python 3.x Tensorflow 测试</span></div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate // 请将<span class="built_in">source</span>后的地址换成您虚拟文件夹所在地址</div><div class="line">$ python3</div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div><div class="line">Hello, TensorFlow!</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = tf.constant(10)</div><div class="line">&gt;&gt;&gt; b = tf.constant(32)</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a + b))</div><div class="line">42</div></pre></td></tr></table></figure>
+<ul>
+<li>Topic 1：如果是GPU支持版本的话，在Terminal中会输出GPU型号和训练时间</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/45446769.jpg" alt=""></p>
+<ul>
+<li>Topic 2：细心的同学会发现除了成功信息外会有不少警告信息，这说明你的CPU并没有达到最高效率，如果希望提高速度去掉这几个Warning的话，你需要下载Tensorflow源码自己进行打包编译</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/63361089.jpg" alt=""></p>
+<ul>
+<li>Topic 3：GPU版本如果在导入Tensorflow的时候出现bug，请参考以下方式修改CUDA文件权限</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/39857381.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/lib64/</div><div class="line">$ sudo rm -rf libcudnn.so libcudnn.so.6</div><div class="line">$ sudo chmod u=rwx,g=rx,o=rx libcudnn.so.6.0.21</div><div class="line">$ sudo ln -s libcudnn.so.6.0.21  libcudnn.so.6</div><div class="line">$ sudo ln -s libcudnn.so.6 libcudnn.so</div></pre></td></tr></table></figure>
+<ul>
+<li>Topic 4：如果在程序运行的过程始终出现CUDA out of memory，这是因为Tensorflow申请的GPU内存大于GPU能提供的内存</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在代码session定义前新增配置：</span></div><div class="line">&gt;&gt;&gt; config = tf.ConfigProto(allow_soft_placement=True)</div><div class="line"><span class="comment"># 最多占gpu资源的70%</span></div><div class="line">&gt;&gt;&gt; gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)</div><div class="line"><span class="comment"># 开始不会给tensorflow全部gpu资源 而是按需增加</span></div><div class="line">&gt;&gt;&gt; config.gpu_options.allow_growth = True</div><div class="line">&gt;&gt;&gt; sess = tf.Session(config=config)</div></pre></td></tr></table></figure>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="附录1-：-Ubuntu常见问题解决方法"><a href="#附录1-：-Ubuntu常见问题解决方法" class="headerlink" title="附录1 ： Ubuntu常见问题解决方法"></a>附录1 ： Ubuntu常见问题解决方法</h3><ul>
+<li>Question 1： E 无法定位软件包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 更换Ubuntu的软件源，并检查是否有输错软件名称</span></div><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/happywho250/article/details/52506321" target="_blank" rel="external">Ubuntu换源帮助</a></p>
+<h3 id="附录2-：-CUDA-和-cuDNN-安装常见问题解决方法"><a href="#附录2-：-CUDA-和-cuDNN-安装常见问题解决方法" class="headerlink" title="附录2 ： CUDA 和 cuDNN 安装常见问题解决方法"></a>附录2 ： CUDA 和 cuDNN 安装常见问题解决方法</h3><ul>
+<li>Question 1： CUDA文件权限不足,无法被链接</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/12910450.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/lib64/</div><div class="line">$ sudo rm -rf libcudnn.so libcudnn.so.6</div><div class="line">$ sudo chmod u=rwx,g=rx,o=rx libcudnn.so.6.0.21 </div><div class="line">$ sudo ln -s libcudnn.so.6.0.21  libcudnn.so.6</div><div class="line">$ sudo ln -s libcudnn.so.6 libcudnn.so</div></pre></td></tr></table></figure>
+<ul>
+<li>Question 2： CUDA out of memory</li>
+</ul>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在代码session定义前新增配置：</span></div><div class="line">&gt;&gt;&gt; config = tf.ConfigProto(allow_soft_placement=True)</div><div class="line"><span class="comment"># 最多占gpu资源的70%</span></div><div class="line">&gt;&gt;&gt; gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)</div><div class="line"><span class="comment"># 开始不会给tensorflow全部gpu资源 而是按需增加</span></div><div class="line">&gt;&gt;&gt; config.gpu_options.allow_growth = True</div><div class="line">&gt;&gt;&gt; sess = tf.Session(config=config)</div></pre></td></tr></table></figure>
+<h3 id="附录3-：-参考文献"><a href="#附录3-：-参考文献" class="headerlink" title="附录3 ： 参考文献"></a>附录3 ： 参考文献</h3><ul>
+<li><a href="http://blog.csdn.net/zhaoyu106/article/details/52793183" target="_blank" rel="external">ubuntu16.04下安装TensorFlow(GPU加速)—-详细图文教程</a> by 蓝色荣誉</li>
+<li><a href="http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/os_setup.html" target="_blank" rel="external">TensorFlow 官方文档中文版</a> by 极客学院</li>
+<li><a href="https://www.tensorflow.org/install/install_linux#InstallingVirtualenv" target="_blank" rel="external">Installing TensorFlow on Ubuntu</a> by Tensorflow官网</li>
+<li><a href="http://www.cnblogs.com/platero/p/4118139.html" target="_blank" rel="external">NVIDIA CuDNN 安装说明</a> by 普兒</li>
+<li><a href="http://blog.csdn.net/wangkun1340378/article/details/72782593" target="_blank" rel="external">NVIDIA CuDNN 安装说明</a> by 无奈的小心酸</li>
+</ul>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -250,7 +409,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/30/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/29/Tensflow安装指南/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,6 +435,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装指南"><span class="toc-number">1.</span> <span class="toc-text">安装指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-前言"><span class="toc-number">1.1.</span> <span class="toc-text">1.前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-准备工作"><span class="toc-number">1.2.</span> <span class="toc-text">2.准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-确认GPU是否支持CUDA"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 确认GPU是否支持CUDA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-安装python"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 安装python</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-Pythone-2-7-的安装与验证"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1 Pythone 2.7 的安装与验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-Pythone-3-x-的安装与验证"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2 Pythone 3.x 的安装与验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Topic-安装常见错误"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">Topic : 安装常见错误</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-安装pip"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 安装pip</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-Python-2-x-pip-安装与校验"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1 Python 2.x pip 安装与校验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-Pythone-3-x-pip3-安装与校验"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.4.2 Pythone 3.x pip3 安装与校验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-更新Pythone对应版本的pip-version-gt-8-1-请跳过该步骤"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.4.3 更新Pythone对应版本的pip(version >= 8.1 请跳过该步骤)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-安装-virtualenv"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 安装 virtualenv</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-virtualenv-安装与校验"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">2.4.1 virtualenv 安装与校验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装CUDA和cuDNN支持"><span class="toc-number">1.3.</span> <span class="toc-text">3.安装CUDA和cuDNN支持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-安装NVIDIA驱动"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 安装NVIDIA驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-安装-CUDA-和-cuDNN-依赖"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 安装 CUDA 和 cuDNN 依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-下载安装-CUDA8-0-和-cuDNN-6-0"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 下载安装 CUDA8.0 和 cuDNN 6.0</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-CUDA8-0-安装"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">3.3.1 CUDA8.0 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-cuDNN-安装"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">3.3.2 cuDNN 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-配置-GPU-Support-的环境依赖"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3.3.3 配置 GPU Support 的环境依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装Tensorflow"><span class="toc-number">1.4.</span> <span class="toc-text">4.安装Tensorflow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Pythone-2-7-安装Tensorflow"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 Pythone 2.7 安装Tensorflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Pythone-3-x-的Tensorflow安装"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 Pythone 3.x 的Tensorflow安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-测试Tensorflow安装结果"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 测试Tensorflow安装结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">1.5.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#附录1-：-Ubuntu常见问题解决方法"><span class="toc-number">1.5.1.</span> <span class="toc-text">附录1 ： Ubuntu常见问题解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附录2-：-CUDA-和-cuDNN-安装常见问题解决方法"><span class="toc-number">1.5.2.</span> <span class="toc-text">附录2 ： CUDA 和 cuDNN 安装常见问题解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附录3-：-参考文献"><span class="toc-number">1.5.3.</span> <span class="toc-text">附录3 ： 参考文献</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -296,7 +468,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2017/09/30/hello-world/",
+  id: "http://yoursite.com/2017/09/29/Tensflow安装指南/",
   owner: 'MichaelJiangPlus',
   repo: 'michaeljiangplus.github.io',
   oauth: {
@@ -410,6 +582,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术笔记</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
