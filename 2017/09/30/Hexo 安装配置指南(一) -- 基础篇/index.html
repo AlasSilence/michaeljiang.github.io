@@ -26,7 +26,9 @@
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/48875396.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/26787040.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/20825630.jpg">
-<meta property="og:updated_time" content="2017-09-30T13:28:46.000Z">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/88448439.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/83886678.jpg">
+<meta property="og:updated_time" content="2017-09-30T13:43:46.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 安装配置指南(一) -- 基础篇">
 <meta name="twitter:description" content="安装指南1.前言以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。 然后就懒得折腾了">
@@ -71,10 +73,6 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="https://michaeljiang.me">My Blog</a></li>
-	        
-				<li><a href="https://michaeljiangplus.github.io">GitPage</a></li>
-	        
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/技术笔记/">技术笔记</a></li>
@@ -91,6 +89,10 @@
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">站点切换</a>
     			
             
 		</nav>
@@ -137,10 +139,6 @@
 			
 				
 			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -161,15 +159,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a href="https://michaeljiang.me">My Blog</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 20%"><a href="https://michaeljiangplus.github.io">GitPage</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/技术笔记/">技术笔记</a></li>
 		        
-					<li style="width: 20%"><a href="/">主页</a></li>
-		        
-					<li style="width: 20%"><a href="/tags/技术笔记/">技术笔记</a></li>
-		        
-					<li style="width: 20%"><a href="/tags/项目日志/">项目日志</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/项目日志/">项目日志</a></li>
 		        
 				</ul>
 			</nav>
@@ -278,6 +272,33 @@
 <p>在更换完配置后,你是不是发现还有很多地方感觉怪怪的?没错,这是因为你现在用的还是主题默认的配置,从文字的显示到头像的内容,都需要你进行重新配置,这个配置文件就存在与/blog/themes/yilia中的_config.yml中(其他主题会有不同的配置方法,但是都是在主题下的_config.yml中)</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 主题默认配置</span></div><div class="line"></div><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="string">主页:</span> <span class="string">/</span></div><div class="line">  <span class="string">随笔:</span> <span class="string">/tags/随笔/</span></div><div class="line"></div><div class="line"><span class="comment"># SubNav</span></div><div class="line"><span class="attr">subnav:</span></div><div class="line"><span class="attr">  github:</span> <span class="string">"#"</span></div><div class="line"><span class="attr">  weibo:</span> <span class="string">"#"</span></div><div class="line"><span class="attr">  rss:</span> <span class="string">"#"</span></div><div class="line"><span class="attr">  zhihu:</span> <span class="string">"#"</span></div><div class="line">  <span class="comment">#qq: "#"</span></div><div class="line">  <span class="comment">#weixin: "#"</span></div><div class="line">  <span class="comment">#jianshu: "#"</span></div><div class="line">  <span class="comment">#douban: "#"</span></div><div class="line">  <span class="comment">#segmentfault: "#"</span></div><div class="line">  <span class="comment">#bilibili: "#"</span></div><div class="line">  <span class="comment">#acfun: "#"</span></div><div class="line">  <span class="comment">#mail: "mailto:litten225@qq.com"</span></div><div class="line">  <span class="comment">#facebook: "#"</span></div><div class="line">  <span class="comment">#google: "#"</span></div><div class="line">  <span class="comment">#twitter: "#"</span></div><div class="line">  <span class="comment">#linkedin: "#"</span></div><div class="line"></div><div class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></div><div class="line"></div><div class="line"><span class="comment"># 是否需要修改 root 路径</span></div><div class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></div><div class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></div><div class="line"><span class="attr">root:</span> </div><div class="line"></div><div class="line"><span class="comment"># Content</span></div><div class="line"></div><div class="line"><span class="comment"># 文章太长，截断按钮文字</span></div><div class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></div><div class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></div><div class="line"><span class="attr">show_all_link:</span> <span class="string">'展开全文'</span></div><div class="line"><span class="comment"># 数学公式</span></div><div class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></div><div class="line"><span class="comment"># 是否在新窗口打开链接</span></div><div class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 打赏</span></div><div class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></div><div class="line"><span class="attr">reward_type:</span> <span class="number">2</span></div><div class="line"><span class="comment"># 打赏wording</span></div><div class="line"><span class="attr">reward_wording:</span> <span class="string">'谢谢你请我吃糖果'</span></div><div class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></div><div class="line"><span class="attr">alipay:</span> </div><div class="line"><span class="comment"># 微信二维码图片地址</span></div><div class="line"><span class="attr">weixin:</span> </div><div class="line"></div><div class="line"><span class="comment"># 目录</span></div><div class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></div><div class="line"><span class="attr">toc:</span> <span class="number">1</span></div><div class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></div><div class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 目录为空时的提示</span></div><div class="line"><span class="attr">toc_empty_wording:</span> <span class="string">'目录，不存在的…'</span></div><div class="line"></div><div class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></div><div class="line"><span class="attr">top:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># Miscellaneous</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">favicon:</span> <span class="string">/favicon.png</span></div><div class="line"></div><div class="line"><span class="comment">#你的头像url</span></div><div class="line"><span class="attr">avatar:</span></div><div class="line"></div><div class="line"><span class="comment">#是否开启分享</span></div><div class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span></div><div class="line"><span class="comment">#不需要使用某项，直接设置值为false，或注释掉</span></div><div class="line"><span class="comment">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span></div><div class="line"></div><div class="line"><span class="comment">#1、多说</span></div><div class="line"><span class="attr">duoshuo:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#2、网易云跟帖</span></div><div class="line"><span class="attr">wangyiyun:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#3、畅言</span></div><div class="line"><span class="attr">changyan_appid:</span> <span class="literal">false</span></div><div class="line"><span class="attr">changyan_conf:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span></div><div class="line"><span class="attr">disqus:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">#5、Gitment</span></div><div class="line"><span class="attr">gitment_owner:</span> <span class="literal">false</span>      <span class="comment">#你的 GitHub ID</span></div><div class="line"><span class="attr">gitment_repo:</span> <span class="string">''</span>          <span class="comment">#存储评论的 repo</span></div><div class="line"><span class="attr">gitment_oauth:</span></div><div class="line"><span class="attr">  client_id:</span> <span class="string">''</span>           <span class="comment">#client ID</span></div><div class="line"><span class="attr">  client_secret:</span> <span class="string">''</span>       <span class="comment">#client secret</span></div><div class="line"></div><div class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></div><div class="line"><span class="attr">style:</span></div><div class="line">  <span class="comment"># 头像上面的背景颜色</span></div><div class="line"><span class="attr">  header:</span> <span class="string">'#4d4d4d'</span></div><div class="line">  <span class="comment"># 右滑板块背景</span></div><div class="line"><span class="attr">  slider:</span> <span class="string">'linear-gradient(200deg,#a0cfe4,#e8c37e)'</span></div><div class="line"></div><div class="line"><span class="comment"># slider的设置</span></div><div class="line"><span class="attr">slider:</span></div><div class="line">  <span class="comment"># 是否默认展开tags板块</span></div><div class="line"><span class="attr">  showTags:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 智能菜单</span></div><div class="line"><span class="comment"># 如不需要，将该对应项置为false</span></div><div class="line"><span class="comment"># 比如</span></div><div class="line"><span class="comment">#smart_menu:</span></div><div class="line"><span class="comment">#  friends: false</span></div><div class="line"><span class="attr">smart_menu:</span></div><div class="line"><span class="attr">  innerArchive:</span> <span class="string">'所有文章'</span></div><div class="line"><span class="attr">  friends:</span> <span class="string">'友链'</span></div><div class="line"><span class="attr">  aboutme:</span> <span class="string">'关于我'</span></div><div class="line"></div><div class="line"><span class="attr">friends:</span></div><div class="line">  <span class="string">友情链接1:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接2:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接3:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接4:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接5:</span> <span class="attr">http://localhost:4000/</span></div><div class="line">  <span class="string">友情链接6:</span> <span class="attr">http://localhost:4000/</span></div><div class="line"></div><div class="line"><span class="attr">aboutme:</span> <span class="string">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</span></div></pre></td></tr></table></figure>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 个人定制后的配置</span></div><div class="line"><span class="comment"># Header</span></div><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="string">My</span> <span class="attr">Blog:</span> <span class="attr">https://michaeljiang.me</span></div><div class="line"><span class="attr">  GitPage:</span> <span class="attr">https://michaeljiangplus.github.io</span></div><div class="line">  <span class="string">主页:</span> <span class="string">/</span></div><div class="line">  <span class="string">技术笔记:</span> <span class="string">/tags/技术笔记/</span></div><div class="line">  <span class="string">项目日志:</span> <span class="string">/tags/项目日志/</span></div><div class="line"></div><div class="line"><span class="comment"># SubNav</span></div><div class="line"><span class="attr">subnav:</span></div><div class="line"><span class="attr">  github:</span> <span class="string">"https://github.com/MichaelJiangPlus"</span></div><div class="line"><span class="attr">  zhihu:</span> <span class="string">"https://www.zhihu.com/people/jiang-zhan-xiang/activities"</span></div><div class="line"><span class="attr">  jianshu:</span> <span class="attr">http://www.jianshu.com/u/b4a9d5c2f31d</span>  </div><div class="line"><span class="attr">  rss:</span> <span class="string">"#"</span></div><div class="line"></div><div class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></div><div class="line"></div><div class="line"><span class="comment"># 是否需要修改 root 路径</span></div><div class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></div><div class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></div><div class="line"><span class="attr">root:</span></div><div class="line"></div><div class="line"><span class="comment"># 文章太长，截断按钮文字</span></div><div class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></div><div class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></div><div class="line"><span class="attr">show_all_link:</span> <span class="string">'展开全文'</span></div><div class="line"><span class="comment"># 数学公式</span></div><div class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 是否在新窗口打开链接</span></div><div class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 打赏</span></div><div class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></div><div class="line"><span class="attr">reward_type:</span> <span class="number">1</span></div><div class="line"><span class="comment"># 打赏wording</span></div><div class="line"><span class="attr">reward_wording:</span> <span class="string">'谢谢'</span></div><div class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></div><div class="line"><span class="attr">alipay:</span> <span class="string">/assets/img/alipay.png</span></div><div class="line"></div><div class="line"><span class="comment"># 目录</span></div><div class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></div><div class="line"><span class="attr">toc:</span> <span class="number">1</span></div><div class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></div><div class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 目录为空时的提示</span></div><div class="line"><span class="attr">toc_empty_wording:</span> <span class="string">'目录，不存在的…'</span></div><div class="line"></div><div class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></div><div class="line"><span class="attr">top:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># Miscellaneous</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></div><div class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/favicon.png</span></div><div class="line"></div><div class="line"><span class="comment">#你的头像url</span></div><div class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></div><div class="line"></div><div class="line"><span class="comment">#是否开启分享</span></div><div class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">#Gitment</span></div><div class="line"><span class="attr">gitment_owner:</span> <span class="string">secrecy</span>       <span class="comment">#你的 GitHub ID</span></div><div class="line"><span class="attr">gitment_repo:</span> <span class="string">secrecy</span>          <span class="comment">#存储评论的 repo</span></div><div class="line"><span class="attr">gitment_oauth:</span></div><div class="line"><span class="attr">  client_id:</span> <span class="string">secrecy</span>           <span class="comment">#client ID</span></div><div class="line"><span class="attr">  client_secret:</span> <span class="string">secrecy</span>       <span class="comment">#client secret</span></div><div class="line"></div><div class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></div><div class="line"><span class="attr">style:</span></div><div class="line">  <span class="comment"># 头像上面的背景颜色</span></div><div class="line"><span class="attr">  header:</span> <span class="string">'#4d4d4d'</span></div><div class="line">  <span class="comment"># 右滑板块背景</span></div><div class="line"><span class="attr">  slider:</span> <span class="string">'linear-gradient(200deg,#a0cfe4,#e8c37e)'</span></div><div class="line"></div><div class="line"><span class="comment"># slider的设置</span></div><div class="line"><span class="attr">slider:</span></div><div class="line">  <span class="comment"># 是否默认展开tags板块</span></div><div class="line"><span class="attr">  showTags:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 智能菜单</span></div><div class="line"><span class="attr">smart_menu:</span></div><div class="line"><span class="attr">  innerArchive:</span> <span class="string">'所有文章'</span></div><div class="line"><span class="attr">  aboutme:</span> <span class="string">'关于我'</span></div><div class="line"></div><div class="line"><span class="attr">aboutme:</span> <span class="string">还在迷茫阶段&lt;br&gt;目前正在探索:&lt;br&gt;&lt;br&gt;前端&lt;br&gt;Tensorflow</span></div></pre></td></tr></table></figure>
+<h3 id="5-Hexo-使用"><a href="#5-Hexo-使用" class="headerlink" title="5. Hexo 使用"></a>5. Hexo 使用</h3><ul>
+<li><strong>Step one :</strong> 新建文章</li>
+</ul>
+<p>现在既然已经成功运行我们的hexo了,那我们要怎么创建一篇新的文章呢?有两种方法,第一种是直接将Markdown的文件直接拷贝到/blog/source/_posts下,在Markdown的页首输入下列字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Hexo 安装配置指南(一) -- 基础篇</div><div class="line">date: 2017-09-30 14:40:01</div><div class="line">tags: [Hexo,技术笔记]</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>或者用hexo的自动创建命令创建一篇新的文章,在里面进行修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请注意要在我们blog的根目录下进行新建</span></div><div class="line">$ hexo new <span class="string">'新建的文章'</span></div><div class="line"><span class="comment"># -------------------------------</span></div><div class="line"><span class="comment"># Created: ~/Project/blog/source/_posts/新建的文章.md</span></div></pre></td></tr></table></figure>
+<p>打开文件后你会发现这样的参考内容</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/88448439.jpg" alt=""></p>
+<p>剩下的内容你就可以直接使用Markdown进行书写啦</p>
+<ul>
+<li><strong>Step two :</strong> 生成新的文章</li>
+</ul>
+<p>如果希望生成新的文章,一般我们会直接在命令行中进行操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 清空原有的文章和内容</span></div><div class="line">$ hexo clean</div><div class="line"><span class="comment"># 新建文章和新的内容</span></div><div class="line">$ hexo g</div><div class="line"><span class="comment"># 从新运行hexo的服务</span></div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>下图就是最新的运行结果啦</p>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-30/83886678.jpg" alt=""></p>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h4 id="附录1-参考文献"><a href="#附录1-参考文献" class="headerlink" title="附录1 : 参考文献"></a>附录1 : 参考文献</h4><ul>
+<li><p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia配置指南</a> by litten</p>
+</li>
+<li><p><a href=""></a> by</p>
+</li>
+<li><p><a href=""></a> by</p>
+</li>
+<li><p><a href=""></a> by</p>
+</li>
+</ul>
 
       
 
@@ -364,6 +385,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/09/30/新建的文章/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          新建的文章
+        
+      </div>
+    </a>
   
   
     <a href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/" id="article-nav-older" class="article-nav-link-wrap">
@@ -492,17 +522,25 @@ MathJax.Hub.Queue(function() {
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">站点切换</a></li>
       
         
     </ul>
@@ -577,6 +615,22 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://michaeljiang.me" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>China  Site</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://michaeljiangplus.github.io" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Abroad Site</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
