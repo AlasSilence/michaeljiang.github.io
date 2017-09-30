@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://michaeljiangplus.github.io">
-  <title>新建的文章 | MichaelJiang的博客</title>
+  <title>Hexo 安装配置指南(二)  -- 静态页面部署篇 | MichaelJiang的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,Tensorflow,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+  <meta name="description" content="安装指南1.前言之前写了一篇如何进行Hexo基础安装配置的文章,但是这种情况一般仅适用于网站调试,因为hexo server服务的效率并不高,大家基本上都是在本地写完文章后直接通过hexo deploy进行静态页面发布,所以在本篇文章中我会向大家介绍如何用Hexo进行静态页面发布,主要针对三种常见的服务.  GitPage  虚拟主机  VPS 的 nginx 反向代理   接下来的内容就是如何进">
+<meta name="keywords" content="Hexo,技术笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新建的文章">
-<meta property="og:url" content="https://michaeljiangplus.github.io/2017/09/30/新建的文章/index.html">
+<meta property="og:title" content="Hexo 安装配置指南(二)  -- 静态页面部署篇">
+<meta property="og:url" content="https://michaeljiangplus.github.io/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/index.html">
 <meta property="og:site_name" content="MichaelJiang的博客">
-<meta property="og:description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+<meta property="og:description" content="安装指南1.前言之前写了一篇如何进行Hexo基础安装配置的文章,但是这种情况一般仅适用于网站调试,因为hexo server服务的效率并不高,大家基本上都是在本地写完文章后直接通过hexo deploy进行静态页面发布,所以在本篇文章中我会向大家介绍如何用Hexo进行静态页面发布,主要针对三种常见的服务.  GitPage  虚拟主机  VPS 的 nginx 反向代理   接下来的内容就是如何进">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-30T13:36:52.934Z">
+<meta property="og:updated_time" content="2017-09-30T14:24:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新建的文章">
-<meta name="twitter:description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+<meta name="twitter:title" content="Hexo 安装配置指南(二)  -- 静态页面部署篇">
+<meta name="twitter:description" content="安装指南1.前言之前写了一篇如何进行Hexo基础安装配置的文章,但是这种情况一般仅适用于网站调试,因为hexo server服务的效率并不高,大家基本上都是在本地写完文章后直接通过hexo deploy进行静态页面发布,所以在本篇文章中我会向大家介绍如何用Hexo进行静态页面发布,主要针对三种常见的服务.  GitPage  虚拟主机  VPS 的 nginx 反向代理   接下来的内容就是如何进">
   
     <link rel="alternative" href="/atom.xml" title="MichaelJiang的博客" type="application/atom+xml">
   
@@ -165,27 +165,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-新建的文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo 安装配置指南(二)  -- 静态页面部署篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      新建的文章
+      Hexo 安装配置指南(二)  -- 静态页面部署篇
     </h1>
   
 
         
-        <a href="/2017/09/30/新建的文章/" class="archive-article-date">
-  	<time datetime="2017-09-30T13:36:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+        <a href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/" class="archive-article-date">
+  	<time datetime="2017-09-30T13:58:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>之前写了一篇如何进行Hexo基础安装配置的文章,但是这种情况一般仅适用于网站调试,因为<strong>hexo server</strong>服务的效率并不高,大家基本上都是在本地写完文章后直接通过<strong>hexo deploy</strong>进行静态页面发布,所以在本篇文章中我会向大家介绍如何用Hexo进行静态页面发布,主要针对三种常见的服务.</p>
+<ul>
+<li><p>GitPage</p>
+</li>
+<li><p>虚拟主机</p>
+</li>
+<li><p>VPS 的 nginx 反向代理</p>
+</li>
+</ul>
+<p>接下来的内容就是如何进行静态页面部署的详情啦。</p>
+<a id="more"></a>
+<h2 id="2-三种服务的详细介绍"><a href="#2-三种服务的详细介绍" class="headerlink" title="2.三种服务的详细介绍"></a>2.三种服务的详细介绍</h2><p>waiting</p>
+<ul>
+<li><p>GitPage</p>
+</li>
+<li><p>虚拟主机</p>
+</li>
+<li><p>VPS</p>
+</li>
+</ul>
+<h2 id="3-静态部署"><a href="#3-静态部署" class="headerlink" title="3.静态部署"></a>3.静态部署</h2><p>本篇章一共讲解了3中不同的情况,每个章节都是独立完整的内容,所以请根据自己的选择和需要选择相应的章节观看.</p>
+<h3 id="3-1-GitPage的安装部署"><a href="#3-1-GitPage的安装部署" class="headerlink" title="3.1 GitPage的安装部署"></a>3.1 GitPage的安装部署</h3><p>waiting</p>
+<h3 id="3-2-虚拟主机的安装部署"><a href="#3-2-虚拟主机的安装部署" class="headerlink" title="3.2 虚拟主机的安装部署"></a>3.2 虚拟主机的安装部署</h3><p>waiting</p>
+<h3 id="3-3-VPS的安装部署"><a href="#3-3-VPS的安装部署" class="headerlink" title="3.3 VPS的安装部署"></a>3.3 VPS的安装部署</h3><p>waiting</p>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h4 id="附录1-参考文献"><a href="#附录1-参考文献" class="headerlink" title="附录1 : 参考文献"></a>附录1 : 参考文献</h4><ul>
+<li><p><a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a> by 潘柏信</p>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">Hexo 部署静态页面</a> by Hexo官方</p>
+</li>
+<li><p><a href="http://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="external">hexo从零开始到搭建完整</a> by Visugar</p>
+</li>
+<li><p><a href="http://www.jianshu.com/p/31eb5c754c01" target="_blank" rel="external">使用Nginx部署Hexo站点</a> by pengloo53</p>
+</li>
+<li><p><a href="http://blog.csdn.net/u013082989/article/details/70212008" target="_blank" rel="external">Hexo+yilia主题实现文章目录和添加视频</a> by 莫失莫忘lawliet</p>
+</li>
+<li><p><a href="http://www.jianshu.com/p/8c55f103e8b4" target="_blank" rel="external">Hexo与阿里云虚拟主机搭建博客</a> by logan丶</p>
+</li>
+</ul>
+
       
 
       
@@ -193,6 +231,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -243,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://michaeljiangplus.github.io/2017/09/30/新建的文章/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://michaeljiangplus.github.io/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,7 +352,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://michaeljiangplus.github.io/2017/09/30/新建的文章/",
+  id: "https://michaeljiangplus.github.io/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/",
   owner: 'MichaelJiangPlus',
   repo: 'michaeljiangplus.github.io',
   oauth: {
