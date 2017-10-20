@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://michaeljiangplus.github.io">
-  <title>MichaelJiang的博客</title>
+  <title>Tensorflow学习指南 | MichaelJiang的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+  <meta name="description" content="测试这是一个测试用的专题www  Chapter 0 AI与Tensorflow  Chapter 1 Tensorflow如何运作  Chapter 2 Tensorflow识别手写字符  Chapter 3 Tensorflow图片分类">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,Tensorflow,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MichaelJiang的博客">
-<meta property="og:url" content="https://michaeljiangplus.github.io/index.html">
+<meta property="og:title" content="Tensorflow学习指南">
+<meta property="og:url" content="https://michaeljiangplus.github.io/Tensorflow学习指南/index.html">
 <meta property="og:site_name" content="MichaelJiang的博客">
-<meta property="og:description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+<meta property="og:description" content="测试这是一个测试用的专题www  Chapter 0 AI与Tensorflow  Chapter 1 Tensorflow如何运作  Chapter 2 Tensorflow识别手写字符  Chapter 3 Tensorflow图片分类">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-11T10:00:04.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MichaelJiang的博客">
-<meta name="twitter:description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+<meta name="twitter:title" content="Tensorflow学习指南">
+<meta name="twitter:description" content="测试这是一个测试用的专题www  Chapter 0 AI与Tensorflow  Chapter 1 Tensorflow如何运作  Chapter 2 Tensorflow识别手写字符  Chapter 3 Tensorflow图片分类">
   
     <link rel="alternative" href="/atom.xml" title="MichaelJiang的博客" type="application/atom+xml">
   
@@ -164,93 +165,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-CodeLabs-tensorflow-for-poets" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/18/CodeLabs-tensorflow-for-poets/">CodeLabs-tensorflow-for-poets</a>
+    <h1 class="article-title" itemprop="name">
+      Tensorflow学习指南
     </h1>
   
 
         
-        <a href="/2017/10/18/CodeLabs-tensorflow-for-poets/" class="archive-article-date">
-  	<time datetime="2017-10-18T12:36:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
+        <a href="/Tensorflow学习指南/index.html" class="archive-article-date">
+  	<time datetime="2017-10-11T09:57:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Tensorflow基础实验"><a href="#Tensorflow基础实验" class="headerlink" title="Tensorflow基础实验"></a>Tensorflow基础实验</h1><h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>Tensorflow是用于数值计算的开源库,专门从事学习应用.在这个CodeLabs中,您将学习如何在单个机器上安装和运行Tensorflow,并尝试训练一个简单的分类器来分类花卉图像.</p>
-<p>那么我们接下来要做什么呢?</p>
-<p>在这个实验中,我们将进行转移学习,这意味这我们将会以已经训练过的模型为基础,通过对这个模型进行再训练来解决相似的问题.为什么要这么做呢?这是因为从头开始进行深度学习往往需要好几天,但是进行转移训练只需要一小会就能完成这件事情.</p>
-<p>我们即将使用的模型是基于ImageNet大型视觉挑战赛的数据进行训练的,这个模型能够区分1000种不同的物体,如达尔马提亚狗或洗碗机,你可以通过选择不同的模型的构架,权衡解决问题的速度,大小和准确性.</p>
-<p>你会学到什么:</p>
+        <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>这是一个测试用的专题www</p>
 <ul>
-<li><p>如何用Python和Tensorflow来训练图像分类器</p>
+<li><p>Chapter 0 AI与Tensorflow</p>
 </li>
-<li><p>如何使用训练有素的分类器对图像进行分类</p>
+<li><p>Chapter 1 Tensorflow如何运作</p>
 </li>
-</ul>
-<p>你需要什么:</p>
-<ul>
-<li>对Linux命令的基本了解</li>
-</ul>
-<h2 id="2-设置"><a href="#2-设置" class="headerlink" title="2 设置"></a>2 设置</h2><ul>
-<li>安装Tensorflow</li>
-</ul>
-<p>在我们开始Tensorflow之前,您需要<strong>安装Tensorflow</strong></p>
-<ul>
-<li>克隆git仓库</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/googlecodelabs/tensorflow-for-poets-2</div><div class="line"></div><div class="line">$ <span class="built_in">cd</span> tensorflow-for-poets-2</div></pre></td></tr></table></figure>
-<h2 id="3-下载训练集"><a href="#3-下载训练集" class="headerlink" title="3 下载训练集"></a>3 下载训练集</h2><p>在开始训练前,您需要一套数据来训练您的模型,我们创建了供大家使用的花卉数据集.你可以通过下面两条命令来下载这些照片.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ curl http://download.tensorflow.org/example_images/flower_photos.tgz \</div><div class="line">    | tar xz -C tf_files</div></pre></td></tr></table></figure>
-<p>你需要将相关的数据集放到您的工作目录中,您可以通过使用一下命令确认照片是否已经放到目录中.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ ls tf_files/flower_photos</div><div class="line"><span class="comment"># 以下为输出内容</span></div><div class="line"><span class="comment"># daisy/ dandelion/ roses/ sunflowers/  tulip/  LICENSE.txt</span></div></pre></td></tr></table></figure>
-<h2 id="4-Re-训练神经网络"><a href="#4-Re-训练神经网络" class="headerlink" title="4 (Re)训练神经网络"></a>4 (Re)训练神经网络</h2><h2 id="4-1-模型的选择与配置"><a href="#4-1-模型的选择与配置" class="headerlink" title="4.1 模型的选择与配置"></a>4.1 模型的选择与配置</h2><p>我们提供了一个训练脚本,用来重新训练Inception V3模型或MobileNet模型.在这个联系中,我们将会使用MobileNet模型.主要区别在于Inception V3模型针对精度做了优化,而MobileNet模型则是更为小巧和高效.</p>
-<p>初始版本的V3在ImageNet上的初始精度为78%,但是他的模型有85MB这么大,这笔最大的MobileNet模型还要大,识别精度为70.5%的MobileNet模型仅有19MB大.</p>
-<p>选择训练神经网络的配置</p>
-<ul>
-<li><p>输入图像的分辨率 : 128 , 160 , 192 or 224px (高分辨率的图像识别需要更多的处理时间,但是准确度会更高,在这里我们推荐使用224px)</p>
+<li><p>Chapter 2 Tensorflow识别手写字符</p>
 </li>
-<li><p>该模型与MobileNet模型的压缩比 : 1.0 , 0.75 , 0.5 or 0.25 (压缩的越多,识别速度越快,但是越不准确,在这里我们推荐使用0.5作为压缩比例)</p>
+<li><p>Chapter 3 Tensorflow图片分类</p>
 </li>
-</ul>
-<p>Topic1 : 使用推荐配置,通常只需要几分钟来重新训练笔记本电脑,你可以通过shell来设置这些变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ IMAGE_SIZE=224</div><div class="line">$ ARCHITECTURE=<span class="string">"mobilenet_0.50_<span class="variable">$&#123;IMAGE_SIZE&#125;</span>"</span></div></pre></td></tr></table></figure>
-<p>Topic2 : 下图的y轴为<strong>精度</strong>,x轴为所需<strong>计算数</strong>,圆圈的面积为<strong>模型的大小</strong>,园的左下角是128px的图片,右上角是224px</p>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-20/35059624.jpg" alt=""></p>
-<h2 id="4-2-开启TensorBoard可视化训练平台"><a href="#4-2-开启TensorBoard可视化训练平台" class="headerlink" title="4.2 开启TensorBoard可视化训练平台"></a>4.2 开启TensorBoard可视化训练平台</h2><p>在开始训练之前,我们需要先启动TensorBoard(Tensorflow配套的监督和检查工具).您可以用它来监督培训进度.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ tensorboard --logdir tf_files/training_summaries &amp;</div></pre></td></tr></table></figure>
-<p>Topic1 : 如果已经开启了TensorBoard请先关闭其他的TensorBoard或者6006端口的进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Error信息: tensorflow:TensorBoard attempted to bind to port 6006, but it was already in use</span></div><div class="line">$ pkill -f <span class="string">"tensorboard"</span></div></pre></td></tr></table></figure>
-<h2 id="4-3-开始训练"><a href="#4-3-开始训练" class="headerlink" title="4.3 开始训练"></a>4.3 开始训练</h2><p>如同引言所属,ImageNet模型是具有百万个参数的网络,可以用来区分大量的物品,我们只是训练该神经网络的最后一次,所以训练将会在比较短的时间内结束.</p>
-<p>使用一下命令开始训练(注意–summaries_dir选项,该选项是用来将训练进度报告发送到TensorBoard用来显示训练进度的)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在bash 和 gitbash中使用</span></div><div class="line">$ python -m scripts.retrain \</div><div class="line">  --bottleneck_dir=tf_files/bottlenecks \</div><div class="line">  --how_many_training_steps=500 \</div><div class="line">  --model_dir=tf_files/models/ \</div><div class="line">  --summaries_dir=tf_files/training_summaries/<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --output_graph=tf_files/retrained_graph.pb \</div><div class="line">  --output_labels=tf_files/retrained_labels.txt \</div><div class="line">  --architecture=<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --image_dir=tf_files/flower_photos</div></pre></td></tr></table></figure>
-<p>该脚本将会下载预训练的模型,并在添加一个新的最后一层,训练您下载的花卉照片.</p>
-<p>Topic1 : 如果您使用Docker并且上述命令失败的话</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ERRO[XXXX] error getting events from daemon: EOF</span></div><div class="line"><span class="comment">#你可能遇到这个错误。将Docker cpu分配增加到4个以上，在OSX上，您可以通过从Docker菜单中选择“Preferences ...”来进行设置，该设置位于“高级”选项卡上。</span></div></pre></td></tr></table></figure>
-<h2 id="5-使用再培训模型"><a href="#5-使用再培训模型" class="headerlink" title="5 使用再培训模型"></a>5 使用再培训模型</h2><p>在培训模型将会写入一下两个文件</p>
-<ul>
-<li><p>tf_files/retrained_graph.pb (从网络上下载的模型,以及刚才我们重新训练的花卉层)</p>
-</li>
-<li><p>tf_files/retrained_labels.txt (它是一个包含标签的文本文件)</p>
-</li>
-</ul>
-<p>你可以使用我们提供的 label_image.py , 您可以用他来测试你训练好的模型</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在 bash 和 Gitbash 上使用下面命令</span></div><div class="line"><span class="comment"># graph的参数是模型所在的位置</span></div><div class="line"><span class="comment"># image的参数是图片所在的位置</span></div><div class="line">$ python -m scripts.label_image \</div><div class="line">    --graph=tf_files/retrained_graph.pb  \</div><div class="line">    --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg</div></pre></td></tr></table></figure>
-<p>你可能会得到如下结果,该结果表示,该图片为雏菊的可能性最高</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 输出结果</span></div><div class="line">daisy (score = 0.99071)</div><div class="line">sunflowers (score = 0.00595)</div><div class="line">dandelion (score = 0.00252)</div><div class="line">roses (score = 0.00049)</div><div class="line">tulips (score = 0.00032)</div></pre></td></tr></table></figure>
-<h3 id="附录3-：-参考文献"><a href="#附录3-：-参考文献" class="headerlink" title="附录3 ： 参考文献"></a>附录3 ： 参考文献</h3><ul>
-<li><a href="https://petewarden.com/2016/02/28/tensorflow-for-poets/" target="_blank" rel="external">TensorFlow for Poets</a> by Pete Warden</li>
-<li><a href="https://www.tensorflow.org/tutorials/image_retraining" target="_blank" rel="external">retraining tutorial</a> by Google</li>
-<li><a href="https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html?index=..%2F..%2Findex#0" target="_blank" rel="external">Codelabs - tensorflow-for-poets</a> by Google</li>
 </ul>
 
       
@@ -260,34 +204,68 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/18/CodeLabs-tensorflow-for-poets/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://michaeljiangplus.github.io/Tensorflow学习指南/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -307,419 +285,31 @@
 
 
 
-
   
-    <article id="post-Ubuntu-安装crt证书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/11/Ubuntu-安装crt证书/">Ubuntu 安装crt证书</a>
-    </h1>
   
 
-        
-        <a href="/2017/10/11/Ubuntu-安装crt证书/" class="archive-article-date">
-  	<time datetime="2017-10-11T13:20:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>最近在实验室使用Ubuntu的时候发现了一个怪事,用实验室的Wifi总是登不上去微信(electronic-wechat),网页版的QQ邮箱也登不上去,感觉像是<strong>https证书</strong>认证失败的缘故,但是去年从来没出现过这种情况,最大的差别就是现在理科楼需要进行认证了,最终在网络中心和小伙伴的帮助下,我们找到了解决问题的方法–安装学校给的<strong>crt证书</strong>.</p>
-<p>于是就有了这一篇文章,那就不多说废话啦,下面就是Ubuntu安装crt证书的方法了</p>
-        
-          <a class="article-more-a" href="/2017/10/11/Ubuntu-安装crt证书/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/11/Ubuntu-安装crt证书/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tensorflow学习指南-一-AI与Tensorflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/11/Tensorflow学习指南-一-AI与Tensorflow/">Tensorflow学习指南(一)-AI与Tensorflow</a>
-    </h1>
   
 
-        
-        <a href="/2017/10/11/Tensorflow学习指南-一-AI与Tensorflow/" class="archive-article-date">
-  	<time datetime="2017-10-11T09:57:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/11/Tensorflow学习指南-一-AI与Tensorflow/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo 安装配置指南(二)  -- 静态页面部署篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/">Hexo 安装配置指南(二)  -- 静态页面部署篇</a>
-    </h1>
   
 
-        
-        <a href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/" class="archive-article-date">
-  	<time datetime="2017-09-30T13:58:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>之前写了一篇如何进行Hexo基础安装配置的文章,但是这种情况一般仅适用于网站调试,因为<strong>hexo server</strong>服务的效率并不高,大家基本上都是在本地写完文章后直接通过<strong>hexo deploy</strong>进行静态页面发布,所以在本篇文章中我会向大家介绍如何用Hexo进行静态页面发布,主要针对三种常见的服务.</p>
-<ul>
-<li><p>GitPage</p>
-</li>
-<li><p>虚拟主机</p>
-</li>
-<li><p>VPS 的 nginx 反向代理</p>
-</li>
-</ul>
-<p>接下来的内容就是如何进行静态页面部署的详情啦。</p>
-        
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Hexo 安装配置指南(一) -- 基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/">Hexo 安装配置指南(一) -- 基础篇</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/" class="archive-article-date">
-  	<time datetime="2017-09-30T06:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。</p>
-<p>然后就懒得折腾了，后续不少的技术笔记和文章都是直接写在有道云笔记上了，后来突然发现了Hexo这个博客框架，感觉非常符合自己对博客的要求，简单明了，对于主题和内容都不需要折腾，上手直接用MarkDown写就好了，倍感欣慰。</p>
-<p>如果你也是不想折腾，就像整理下自己的技术笔记或者想写点东西给其他人看的话，我推荐你也试试用Hexo这个博客框架，他的文档非常的详细，非常适合想写文章的人。(如果比较喜欢折腾的话，也可以试一下Keystonejs这个内容管理框架，开发起来非常的方便好用)</p>
-<p>好啦，废话不多说，下面就是详细的Hexo安装详情了。</p>
-        
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tensorflow With Gpu 安装指南(ubuntu16.04)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/">Tensorflow With Gpu 安装指南(ubuntu16.04)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/" class="archive-article-date">
-  	<time datetime="2017-09-29T08:41:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。</p>
-<p>好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。</p>
-        
-          <a class="article-more-a" href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+  <div id="gitment-ctn"></div> 
+<!-- <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css"> -->
+<link rel="stylesheet" type="text/css" href="/./my_gitment_default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://michaeljiangplus.github.io/Tensorflow学习指南/index.html",
+  owner: 'MichaelJiangPlus',
+  repo: 'michaeljiangplus.github.io',
+  oauth: {
+    client_id: 'dcb112c51d01f14a8004',
+    client_secret: 'c68e64c5209058ec52f402a7bf168eb4510aeb1f',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -742,7 +332,7 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,

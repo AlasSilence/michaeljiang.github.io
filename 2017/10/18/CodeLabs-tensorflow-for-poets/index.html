@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://michaeljiangplus.github.io">
-  <title>MichaelJiang的博客</title>
+  <title>CodeLabs-tensorflow-for-poets | MichaelJiang的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,Tensorflow,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MichaelJiang的博客">
-<meta property="og:url" content="https://michaeljiangplus.github.io/index.html">
+  <meta name="description" content="Tensorflow基础实验1 介绍Tensorflow是用于数值计算的开源库,专门从事学习应用.在这个CodeLabs中,您将学习如何在单个机器上安装和运行Tensorflow,并尝试训练一个简单的分类器来分类花卉图像. 那么我们接下来要做什么呢? 在这个实验中,我们将进行转移学习,这意味这我们将会以已经训练过的模型为基础,通过对这个模型进行再训练来解决相似的问题.为什么要这么做呢?这是因为从头">
+<meta name="keywords" content="Tensorflow,技术笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CodeLabs-tensorflow-for-poets">
+<meta property="og:url" content="https://michaeljiangplus.github.io/2017/10/18/CodeLabs-tensorflow-for-poets/index.html">
 <meta property="og:site_name" content="MichaelJiang的博客">
-<meta property="og:description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+<meta property="og:description" content="Tensorflow基础实验1 介绍Tensorflow是用于数值计算的开源库,专门从事学习应用.在这个CodeLabs中,您将学习如何在单个机器上安装和运行Tensorflow,并尝试训练一个简单的分类器来分类花卉图像. 那么我们接下来要做什么呢? 在这个实验中,我们将进行转移学习,这意味这我们将会以已经训练过的模型为基础,通过对这个模型进行再训练来解决相似的问题.为什么要这么做呢?这是因为从头">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-20/35059624.jpg">
+<meta property="og:updated_time" content="2017-10-20T08:26:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MichaelJiang的博客">
-<meta name="twitter:description" content="浙江大学城市学院14级学生，正在钻研前端和Tensorflow">
+<meta name="twitter:title" content="CodeLabs-tensorflow-for-poets">
+<meta name="twitter:description" content="Tensorflow基础实验1 介绍Tensorflow是用于数值计算的开源库,专门从事学习应用.在这个CodeLabs中,您将学习如何在单个机器上安装和运行Tensorflow,并尝试训练一个简单的分类器来分类花卉图像. 那么我们接下来要做什么呢? 在这个实验中,我们将进行转移学习,这意味这我们将会以已经训练过的模型为基础,通过对这个模型进行再训练来解决相似的问题.为什么要这么做呢?这是因为从头">
+<meta name="twitter:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-20/35059624.jpg">
   
     <link rel="alternative" href="/atom.xml" title="MichaelJiang的博客" type="application/atom+xml">
   
@@ -164,16 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-CodeLabs-tensorflow-for-poets" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-CodeLabs-tensorflow-for-poets" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/18/CodeLabs-tensorflow-for-poets/">CodeLabs-tensorflow-for-poets</a>
+    <h1 class="article-title" itemprop="name">
+      CodeLabs-tensorflow-for-poets
     </h1>
   
 
@@ -278,16 +279,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/18/CodeLabs-tensorflow-for-poets/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://michaeljiangplus.github.io/2017/10/18/CodeLabs-tensorflow-for-poets/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/11/Ubuntu-安装crt证书/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu 安装crt证书</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -307,419 +367,31 @@
 
 
 
-
   
-    <article id="post-Ubuntu-安装crt证书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/11/Ubuntu-安装crt证书/">Ubuntu 安装crt证书</a>
-    </h1>
   
 
-        
-        <a href="/2017/10/11/Ubuntu-安装crt证书/" class="archive-article-date">
-  	<time datetime="2017-10-11T13:20:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>最近在实验室使用Ubuntu的时候发现了一个怪事,用实验室的Wifi总是登不上去微信(electronic-wechat),网页版的QQ邮箱也登不上去,感觉像是<strong>https证书</strong>认证失败的缘故,但是去年从来没出现过这种情况,最大的差别就是现在理科楼需要进行认证了,最终在网络中心和小伙伴的帮助下,我们找到了解决问题的方法–安装学校给的<strong>crt证书</strong>.</p>
-<p>于是就有了这一篇文章,那就不多说废话啦,下面就是Ubuntu安装crt证书的方法了</p>
-        
-          <a class="article-more-a" href="/2017/10/11/Ubuntu-安装crt证书/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/11/Ubuntu-安装crt证书/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tensorflow学习指南-一-AI与Tensorflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/11/Tensorflow学习指南-一-AI与Tensorflow/">Tensorflow学习指南(一)-AI与Tensorflow</a>
-    </h1>
   
 
-        
-        <a href="/2017/10/11/Tensorflow学习指南-一-AI与Tensorflow/" class="archive-article-date">
-  	<time datetime="2017-10-11T09:57:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/11/Tensorflow学习指南-一-AI与Tensorflow/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo 安装配置指南(二)  -- 静态页面部署篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/">Hexo 安装配置指南(二)  -- 静态页面部署篇</a>
-    </h1>
   
 
-        
-        <a href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/" class="archive-article-date">
-  	<time datetime="2017-09-30T13:58:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>之前写了一篇如何进行Hexo基础安装配置的文章,但是这种情况一般仅适用于网站调试,因为<strong>hexo server</strong>服务的效率并不高,大家基本上都是在本地写完文章后直接通过<strong>hexo deploy</strong>进行静态页面发布,所以在本篇文章中我会向大家介绍如何用Hexo进行静态页面发布,主要针对三种常见的服务.</p>
-<ul>
-<li><p>GitPage</p>
-</li>
-<li><p>虚拟主机</p>
-</li>
-<li><p>VPS 的 nginx 反向代理</p>
-</li>
-</ul>
-<p>接下来的内容就是如何进行静态页面部署的详情啦。</p>
-        
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(二)  -- 静态页面部署篇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Hexo 安装配置指南(一) -- 基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/">Hexo 安装配置指南(一) -- 基础篇</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/" class="archive-article-date">
-  	<time datetime="2017-09-30T06:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>以前一直有写博客的心，但是一直就是折腾折腾就不搞，最早的时候是见到同学自己搞域名在上面写自己的ACM题解，感觉好酷啊，自己也想在上面写点东西，后来就自己折腾了一个域名，在HawkHost买了一个虚拟服务器，但是搭建好了WordPress后就懒得折腾了，富文本编辑器写起东西总感觉怪怪的。套用的主题虽然好看，但是发现如果想要像主题一样的效果，自己还是要重新配置的。。。</p>
-<p>然后就懒得折腾了，后续不少的技术笔记和文章都是直接写在有道云笔记上了，后来突然发现了Hexo这个博客框架，感觉非常符合自己对博客的要求，简单明了，对于主题和内容都不需要折腾，上手直接用MarkDown写就好了，倍感欣慰。</p>
-<p>如果你也是不想折腾，就像整理下自己的技术笔记或者想写点东西给其他人看的话，我推荐你也试试用Hexo这个博客框架，他的文档非常的详细，非常适合想写文章的人。(如果比较喜欢折腾的话，也可以试一下Keystonejs这个内容管理框架，开发起来非常的方便好用)</p>
-<p>好啦，废话不多说，下面就是详细的Hexo安装详情了。</p>
-        
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/30/Hexo 安装配置指南(一) -- 基础篇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tensorflow With Gpu 安装指南(ubuntu16.04)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/">Tensorflow With Gpu 安装指南(ubuntu16.04)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/" class="archive-article-date">
-  	<time datetime="2017-09-29T08:41:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。</p>
-<p>好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。</p>
-        
-          <a class="article-more-a" href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+  <div id="gitment-ctn"></div> 
+<!-- <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css"> -->
+<link rel="stylesheet" type="text/css" href="/./my_gitment_default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://michaeljiangplus.github.io/2017/10/18/CodeLabs-tensorflow-for-poets/",
+  owner: 'MichaelJiangPlus',
+  repo: 'michaeljiangplus.github.io',
+  oauth: {
+    client_id: 'dcb112c51d01f14a8004',
+    client_secret: 'c68e64c5209058ec52f402a7bf168eb4510aeb1f',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -742,8 +414,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

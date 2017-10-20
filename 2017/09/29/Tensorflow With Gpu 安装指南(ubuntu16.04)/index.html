@@ -9,7 +9,7 @@
   <title>Tensorflow With Gpu 安装指南(ubuntu16.04) | MichaelJiang的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
-<meta name="keywords" content="技术笔记,Tensorflow">
+<meta name="keywords" content="Tensorflow,技术笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
 <meta property="og:url" content="https://michaeljiangplus.github.io/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/index.html">
@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/12910450.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
-<meta property="og:updated_time" content="2017-09-30T13:29:15.735Z">
+<meta property="og:updated_time" content="2017-10-09T09:19:16.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
 <meta name="twitter:description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
@@ -192,7 +192,7 @@
 
         
         <a href="/2017/09/29/Tensorflow With Gpu 安装指南(ubuntu16.04)/" class="archive-article-date">
-  	<time datetime="2017-09-29T07:41:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+  	<time datetime="2017-09-29T08:41:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
 </a>
         
       </header>
@@ -270,7 +270,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-gpu //tensorflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-gpu) $ pip install --upgrade tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages tensorflow //tensorflow 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow) $ pip install --upgrade tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow) $ deactivate</div></pre></td></tr></table></figure>
 <h3 id="4-2-Pythone-3-x-的Tensorflow安装"><a href="#4-2-Pythone-3-x-的Tensorflow安装" class="headerlink" title="4.2 Pythone 3.x 的Tensorflow安装"></a>4.2 Pythone 3.x 的Tensorflow安装</h3><p>1  <strong>首先找到你打算安装Tensflow环境的位置(教程中安装的位置为~目录下)</strong></p>
 <p>2  <strong>在terminal中输入以下命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-p3-gpu //tensorflow-p3-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3-gpu) $ pip3 install tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages tensorflow-p3 //tensflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3) $ pip3 install tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3) $ deactivate</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 :安装Tensorflow With GPU</span></div><div class="line">$ virtualenv --system-site-packages -p python3 tensorflow-p3-gpu //tensorflow-p3-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3-gpu) $ pip3 install tensorflow-gpu</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3-gpu) $ deactivate</div><div class="line"></div><div class="line"><span class="comment"># Case 2 :安装Tensorflow CPU-only support</span></div><div class="line">$ virtualenv --system-site-packages -p python3 tensorflow-p3 //tensflow-gpu 为文件夹名称</div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3/bin/activate</div><div class="line">// 在这之后请注意观察 $ 前面的部分</div><div class="line">(tensorflow-p3) $ pip3 install tensorflow</div><div class="line">//在terminal中输入以下命令退出虚拟环境</div><div class="line">(tensorflow-p3) $ deactivate</div></pre></td></tr></table></figure>
 <h3 id="4-3-测试Tensorflow安装结果"><a href="#4-3-测试Tensorflow安装结果" class="headerlink" title="4.3 测试Tensorflow安装结果"></a>4.3 测试Tensorflow安装结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Case 1 : Python 2.7 Tensorflow 测试</span></div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-gpu/bin/activate // 请将<span class="built_in">source</span>后的地址换成您虚拟文件夹所在地址</div><div class="line">$ python </div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div><div class="line">Hello, TensorFlow!</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = tf.constant(10)</div><div class="line">&gt;&gt;&gt; b = tf.constant(32)</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a + b))</div><div class="line">42</div><div class="line"></div><div class="line"><span class="comment"># Case 2 : Python 3.x Tensorflow 测试</span></div><div class="line">$ <span class="built_in">source</span> ~/tensorflow-p3-gpu/bin/activate // 请将<span class="built_in">source</span>后的地址换成您虚拟文件夹所在地址</div><div class="line">$ python3</div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div><div class="line">Hello, TensorFlow!</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = tf.constant(10)</div><div class="line">&gt;&gt;&gt; b = tf.constant(32)</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a + b))</div><div class="line">42</div></pre></td></tr></table></figure>
 <ul>
 <li>Topic 1：如果是GPU支持版本的话，在Terminal中会输出GPU型号和训练时间</li>
@@ -284,7 +284,7 @@
 <li>Topic 3：GPU版本如果在导入Tensorflow的时候出现bug，请参考以下方式修改CUDA文件权限</li>
 </ul>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/39857381.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/lib64/</div><div class="line">$ sudo rm -rf libcudnn.so libcudnn.so.6</div><div class="line">$ sudo chmod u=rwx,g=rx,o=rx libcudnn.so.6.0.21</div><div class="line">$ sudo ln -s libcudnn.so.6.0.21  libcudnn.so.6</div><div class="line">$ sudo ln -s libcudnn.so.6 libcudnn.so</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在terminal中输入以下命令：</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda/lib64/</div><div class="line">$ sudo rm -rf libcudnn.so libcudnn.so.6</div><div class="line">$ sudo chmod u=rwx,g=rx,o=rx libcudnn.so.6.0.21</div><div class="line">$ sudo ln -s libcudnn.so.6.0.21  libcudnn.so.6</div><div class="line">$ sudo ln -s libcudnn.so.6 libcudnn.so</div><div class="line">$ sudo ldconfig</div></pre></td></tr></table></figure>
 <ul>
 <li>Topic 4：如果在程序运行的过程始终出现CUDA out of memory，这是因为Tensorflow申请的GPU内存大于GPU能提供的内存</li>
 </ul>
@@ -325,11 +325,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术笔记</a>
         		</li>
       		
 		</ul>
@@ -582,7 +582,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,7 +590,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
