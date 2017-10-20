@@ -201,58 +201,9 @@
 <ul>
 <li>对Linux命令的基本了解</li>
 </ul>
-<h2 id="2-设置"><a href="#2-设置" class="headerlink" title="2 设置"></a>2 设置</h2><ul>
-<li>安装Tensorflow</li>
-</ul>
-<p>在我们开始Tensorflow之前,您需要<strong>安装Tensorflow</strong></p>
-<ul>
-<li>克隆git仓库</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/googlecodelabs/tensorflow-for-poets-2</div><div class="line"></div><div class="line">$ <span class="built_in">cd</span> tensorflow-for-poets-2</div></pre></td></tr></table></figure>
-<h2 id="3-下载训练集"><a href="#3-下载训练集" class="headerlink" title="3 下载训练集"></a>3 下载训练集</h2><p>在开始训练前,您需要一套数据来训练您的模型,我们创建了供大家使用的花卉数据集.你可以通过下面两条命令来下载这些照片.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ curl http://download.tensorflow.org/example_images/flower_photos.tgz \</div><div class="line">    | tar xz -C tf_files</div></pre></td></tr></table></figure>
-<p>你需要将相关的数据集放到您的工作目录中,您可以通过使用一下命令确认照片是否已经放到目录中.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ ls tf_files/flower_photos</div><div class="line"><span class="comment"># 以下为输出内容</span></div><div class="line"><span class="comment"># daisy/ dandelion/ roses/ sunflowers/  tulip/  LICENSE.txt</span></div></pre></td></tr></table></figure>
-<h2 id="4-Re-训练神经网络"><a href="#4-Re-训练神经网络" class="headerlink" title="4 (Re)训练神经网络"></a>4 (Re)训练神经网络</h2><h2 id="4-1-模型的选择与配置"><a href="#4-1-模型的选择与配置" class="headerlink" title="4.1 模型的选择与配置"></a>4.1 模型的选择与配置</h2><p>我们提供了一个训练脚本,用来重新训练Inception V3模型或MobileNet模型.在这个联系中,我们将会使用MobileNet模型.主要区别在于Inception V3模型针对精度做了优化,而MobileNet模型则是更为小巧和高效.</p>
-<p>初始版本的V3在ImageNet上的初始精度为78%,但是他的模型有85MB这么大,这笔最大的MobileNet模型还要大,识别精度为70.5%的MobileNet模型仅有19MB大.</p>
-<p>选择训练神经网络的配置</p>
-<ul>
-<li><p>输入图像的分辨率 : 128 , 160 , 192 or 224px (高分辨率的图像识别需要更多的处理时间,但是准确度会更高,在这里我们推荐使用224px)</p>
-</li>
-<li><p>该模型与MobileNet模型的压缩比 : 1.0 , 0.75 , 0.5 or 0.25 (压缩的越多,识别速度越快,但是越不准确,在这里我们推荐使用0.5作为压缩比例)</p>
-</li>
-</ul>
-<p>Topic1 : 使用推荐配置,通常只需要几分钟来重新训练笔记本电脑,你可以通过shell来设置这些变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ IMAGE_SIZE=224</div><div class="line">$ ARCHITECTURE=<span class="string">"mobilenet_0.50_<span class="variable">$&#123;IMAGE_SIZE&#125;</span>"</span></div></pre></td></tr></table></figure>
-<p>Topic2 : 下图的y轴为<strong>精度</strong>,x轴为所需<strong>计算数</strong>,圆圈的面积为<strong>模型的大小</strong>,园的左下角是128px的图片,右上角是224px</p>
-<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-20/35059624.jpg" alt=""></p>
-<h2 id="4-2-开启TensorBoard可视化训练平台"><a href="#4-2-开启TensorBoard可视化训练平台" class="headerlink" title="4.2 开启TensorBoard可视化训练平台"></a>4.2 开启TensorBoard可视化训练平台</h2><p>在开始训练之前,我们需要先启动TensorBoard(Tensorflow配套的监督和检查工具).您可以用它来监督培训进度.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ tensorboard --logdir tf_files/training_summaries &amp;</div></pre></td></tr></table></figure>
-<p>Topic1 : 如果已经开启了TensorBoard请先关闭其他的TensorBoard或者6006端口的进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Error信息: tensorflow:TensorBoard attempted to bind to port 6006, but it was already in use</span></div><div class="line">$ pkill -f <span class="string">"tensorboard"</span></div></pre></td></tr></table></figure>
-<h2 id="4-3-开始训练"><a href="#4-3-开始训练" class="headerlink" title="4.3 开始训练"></a>4.3 开始训练</h2><p>如同引言所属,ImageNet模型是具有百万个参数的网络,可以用来区分大量的物品,我们只是训练该神经网络的最后一次,所以训练将会在比较短的时间内结束.</p>
-<p>使用一下命令开始训练(注意–summaries_dir选项,该选项是用来将训练进度报告发送到TensorBoard用来显示训练进度的)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在bash 和 gitbash中使用</span></div><div class="line">$ python -m scripts.retrain \</div><div class="line">  --bottleneck_dir=tf_files/bottlenecks \</div><div class="line">  --how_many_training_steps=500 \</div><div class="line">  --model_dir=tf_files/models/ \</div><div class="line">  --summaries_dir=tf_files/training_summaries/<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --output_graph=tf_files/retrained_graph.pb \</div><div class="line">  --output_labels=tf_files/retrained_labels.txt \</div><div class="line">  --architecture=<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --image_dir=tf_files/flower_photos</div></pre></td></tr></table></figure>
-<p>该脚本将会下载预训练的模型,并在添加一个新的最后一层,训练您下载的花卉照片.</p>
-<p>Topic1 : 如果您使用Docker并且上述命令失败的话</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ERRO[XXXX] error getting events from daemon: EOF</span></div><div class="line"><span class="comment">#你可能遇到这个错误。将Docker cpu分配增加到4个以上，在OSX上，您可以通过从Docker菜单中选择“Preferences ...”来进行设置，该设置位于“高级”选项卡上。</span></div></pre></td></tr></table></figure>
-<h2 id="5-使用再培训模型"><a href="#5-使用再培训模型" class="headerlink" title="5 使用再培训模型"></a>5 使用再培训模型</h2><p>在培训模型将会写入一下两个文件</p>
-<ul>
-<li><p>tf_files/retrained_graph.pb (从网络上下载的模型,以及刚才我们重新训练的花卉层)</p>
-</li>
-<li><p>tf_files/retrained_labels.txt (它是一个包含标签的文本文件)</p>
-</li>
-</ul>
-<p>你可以使用我们提供的 label_image.py , 您可以用他来测试你训练好的模型</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在 bash 和 Gitbash 上使用下面命令</span></div><div class="line"><span class="comment"># graph的参数是模型所在的位置</span></div><div class="line"><span class="comment"># image的参数是图片所在的位置</span></div><div class="line">$ python -m scripts.label_image \</div><div class="line">    --graph=tf_files/retrained_graph.pb  \</div><div class="line">    --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg</div></pre></td></tr></table></figure>
-<p>你可能会得到如下结果,该结果表示,该图片为雏菊的可能性最高</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 输出结果</span></div><div class="line">daisy (score = 0.99071)</div><div class="line">sunflowers (score = 0.00595)</div><div class="line">dandelion (score = 0.00252)</div><div class="line">roses (score = 0.00049)</div><div class="line">tulips (score = 0.00032)</div></pre></td></tr></table></figure>
-<h3 id="附录3-：-参考文献"><a href="#附录3-：-参考文献" class="headerlink" title="附录3 ： 参考文献"></a>附录3 ： 参考文献</h3><ul>
-<li><a href="https://petewarden.com/2016/02/28/tensorflow-for-poets/" target="_blank" rel="external">TensorFlow for Poets</a> by Pete Warden</li>
-<li><a href="https://www.tensorflow.org/tutorials/image_retraining" target="_blank" rel="external">retraining tutorial</a> by Google</li>
-<li><a href="https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html?index=..%2F..%2Findex#0" target="_blank" rel="external">Codelabs - tensorflow-for-poets</a> by Google</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2017/10/18/CodeLabs-tensorflow-for-poets/#more">more >></a>
+        
       
 
       
@@ -842,11 +793,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
             
             <div class="clearfix"></div>
