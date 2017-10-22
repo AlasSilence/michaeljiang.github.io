@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/12910450.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/9121397.jpg">
-<meta property="og:updated_time" content="2017-10-09T09:19:16.471Z">
+<meta property="og:updated_time" content="2017-10-20T10:34:37.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow With Gpu 安装指南(ubuntu16.04)">
 <meta name="twitter:description" content="安装指南1.前言由于这是我头一次接触Tensflow和深度学习的东西，所以在安装的时候遇到了不少的问题，非常感谢各种前辈们的博文，在经历了不停的搜索和挣扎后，我终于成功的安装了Tensorflow with GPU support。 好啦，废话不多说，下面就是详细的Tensorflow-Gpu安装详情了。">
@@ -247,7 +247,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装Deb的网络版本</span></div><div class="line">$ sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb</div><div class="line">$ sudo apt-get update</div><div class="line"><span class="comment"># 请注意必须要使用cuda-8.0，不然将会现在现在的最新版本</span></div><div class="line">$ sudo apt-get install cuda-8.0</div></pre></td></tr></table></figure>
 <h4 id="3-3-2-cuDNN-安装"><a href="#3-3-2-cuDNN-安装" class="headerlink" title="3.3.2 cuDNN 安装"></a>3.3.2 cuDNN 安装</h4><p>1  访问 <a href="https://developer.nvidia.com/cudnn" target="_blank" rel="external">https://developer.nvidia.com/cudnn</a> 点击Download后注册登录</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/4192833.jpg" alt=""></p>
-<p>2  下载 cuDNN v6.0 Library for Linux</p>
+<p>2  下载### 附录3 ： 参考文献</p>
+<ul>
+<li><a href="http://blog.csdn.net/zhaoyu106/article/details/52793183" target="_blank" rel="external">ubuntu16.04下安装TensorFlow(GPU加速)—-详细图文教程</a> by 蓝色荣誉</li>
+<li><a href="http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/os_setup.html" target="_blank" rel="external">TensorFlow 官方文档中文版</a> by 极客学院</li>
+<li><a href="https://www.tensorflow.org/install/install_linux#InstallingVirtualenv" target="_blank" rel="external">Installing TensorFlow on Ubuntu</a> by Tensorflow官网</li>
+<li><a href="http://www.cnblogs.com/platero/p/4118139.html" target="_blank" rel="external">NVIDIA CuDNN 安装说明</a> by 普兒</li>
+<li><a href="http://blog.csdn.net/wangkun1340378/article/details/72782593" target="_blank" rel="external">NVIDIA CuDNN 安装说明</a> by 无奈的小心酸<br>cuDNN v6.0 Library for Linux</li>
+</ul>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/11515935.jpg" alt=""></p>
 <p>3  查看下载后的文件(如图所示下载的内容应该是一个.tgz文件)<br><img src="http://ox0sjjwt5.bkt.clouddn.com/17-9-29/96492970.jpg" alt=""></p>
 <p>4  在terminal中输入以下命令安装</p>
