@@ -21,6 +21,7 @@
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/14050388.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/87478279.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/13543654.jpg">
+<meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/97915737.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-20/35059624.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/76176260.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/77143530.jpg">
@@ -32,7 +33,7 @@
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/62969073.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/33071831.jpg">
 <meta property="og:image" content="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/78200521.jpg">
-<meta property="og:updated_time" content="2017-10-25T13:27:39.000Z">
+<meta property="og:updated_time" content="2017-10-25T15:39:03.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CodeLabs-tensorflow-for-poets-special">
 <meta name="twitter:description" content="Tensorflow基础实验1 介绍Tensorflow是用于数值计算的开源库,专门从事学习应用.在这个CodeLabs中,您将学习如何在单个机器上安装和运行Tensorflow,并尝试训练一个简单的分类器来分类花卉图像. 那么我们接下来要做什么呢? 在这个实验中,我们将进行转移学习,这意味这我们将会以已经训练过的模型为基础,通过对这个模型进行再训练来解决相似的问题.为什么要这么做呢?这是因为从头">
@@ -220,7 +221,7 @@
 <a id="more"></a>
 <h2 id="2-设置"><a href="#2-设置" class="headerlink" title="2 设置"></a>2 设置</h2><h2 id="2-1-安装Tensorflow"><a href="#2-1-安装Tensorflow" class="headerlink" title="2.1 安装Tensorflow"></a>2.1 安装Tensorflow</h2><p>在我们开始Tensorflow之前,您需要<strong>安装Tensorflow</strong>(CodeLabs测试机已经准备好了相关的开发环境)</p>
 <p>本次CodeLabs为了防止网络不好带来的问题,已经提前将所有的资料下载好,并放在桌面上了的CodeLabs资料文件夹下</p>
-<h2 id="2-2-创建你的个人工作目录"><a href="#2-2-创建你的个人工作目录" class="headerlink" title="2.2 创建你的个人工作目录"></a>2.2 创建你的个人工作目录</h2><p>为了防止其他人的项目干扰,我们首先要新建一个自己的文件家用来保存自己的工程文件.</p>
+<h2 id="2-2-创建你的个人工作目录"><a href="#2-2-创建你的个人工作目录" class="headerlink" title="2.2 创建你的个人工作目录"></a>2.2 创建你的个人工作目录</h2><p>为了防止其他人的项目干扰,我们首先要新建一个自己的文件夹用来保存自己的工程文件.</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/34520169.jpg" alt=""></p>
 <h2 id="2-3-下载工程文件"><a href="#2-3-下载工程文件" class="headerlink" title="2.3 下载工程文件"></a>2.3 下载工程文件</h2><ul>
 <li>方案一 : 克隆git仓库</li>
@@ -229,7 +230,7 @@
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/65768551.jpg" alt=""></p>
 <p>会弹出如下的对话框,<strong>以下所有要输入的命令都是在Gitbash中进行的</strong></p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/14050388.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在erminal 或者 GitBash 下进行操作</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/googlecodelabs/tensorflow-for-poets-2</div><div class="line"></div><div class="line">$ <span class="built_in">cd</span> tensorflow-for-poets-2</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/googlecodelabs/tensorflow-for-poets-2</div><div class="line"></div><div class="line">$ <span class="built_in">cd</span> tensorflow-for-poets-2</div></pre></td></tr></table></figure>
 <p>成功示意图</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/87478279.jpg" alt=""></p>
 <ul>
@@ -239,13 +240,14 @@
 <ul>
 <li>方案一 : 在GitBash中通过命令行下载花卉数据并且解压</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ curl http://download.tensorflow.org/example_images/flower_photos.tgz \</div><div class="line">    | tar xz -C tf_files</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ curl http://download.tensorflow.org/example_images/flower_photos.tgz \</div><div class="line">    | tar xz -C tf_files</div></pre></td></tr></table></figure>
 <ul>
 <li>方案二 : 解压CodeLabs中的资料,放置在 tf_files/flower_photos 下</li>
 </ul>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/13543654.jpg" alt=""></p>
 <h2 id="3-2-检查训练集是否按照要求放置在制定文件夹下"><a href="#3-2-检查训练集是否按照要求放置在制定文件夹下" class="headerlink" title="3.2 检查训练集是否按照要求放置在制定文件夹下"></a>3.2 检查训练集是否按照要求放置在制定文件夹下</h2><p>你需要将相关的数据集放到您的工作目录中,您可以通过使用一下命令确认照片是否已经放到目录中.(请在项目文件夹下打开Gitbash)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Bash 或者 GitBash 下进行操作</span></div><div class="line">$ ls tf_files/flower_photos</div><div class="line"><span class="comment"># 以下为输出内容</span></div><div class="line"><span class="comment"># daisy/ dandelion/ roses/ sunflowers/  tulip/  LICENSE.txt</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ ls tf_files/flower_photos</div><div class="line"><span class="comment"># 以下为输出内容</span></div><div class="line"><span class="comment"># daisy/ dandelion/ roses/ sunflowers/  tulip/  LICENSE.txt</span></div></pre></td></tr></table></figure>
+<p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/97915737.jpg" alt=""></p>
 <h2 id="4-Re-训练神经网络"><a href="#4-Re-训练神经网络" class="headerlink" title="4 (Re)训练神经网络"></a>4 (Re)训练神经网络</h2><h2 id="4-1-模型的选择与配置"><a href="#4-1-模型的选择与配置" class="headerlink" title="4.1 模型的选择与配置"></a>4.1 模型的选择与配置</h2><p>我们提供了一个训练脚本,用来重新训练Inception V3模型或MobileNet模型.在这个联系中,我们将会使用MobileNet模型.主要区别在于Inception V3模型针对精度做了优化,而MobileNet模型则是更为小巧和高效.</p>
 <p>初始版本的V3在ImageNet上的初始精度为78%,但是他的模型有85MB这么大,这笔最大的MobileNet模型还要大,识别精度为70.5%的MobileNet模型仅有19MB大.</p>
 <p>选择训练神经网络的配置</p>
@@ -256,11 +258,11 @@
 </li>
 </ul>
 <p>Topic1 : 使用推荐配置,通常只需要几分钟来重新训练笔记本电脑,你可以通过shell来设置这些变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ IMAGE_SIZE=224</div><div class="line">$ ARCHITECTURE=<span class="string">"mobilenet_0.50_<span class="variable">$&#123;IMAGE_SIZE&#125;</span>"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ IMAGE_SIZE=224</div><div class="line">$ ARCHITECTURE=<span class="string">"mobilenet_0.50_<span class="variable">$&#123;IMAGE_SIZE&#125;</span>"</span></div></pre></td></tr></table></figure>
 <p>Topic2 : 下图的y轴为<strong>精度</strong>,x轴为所需<strong>计算数</strong>,圆圈的面积为<strong>模型的大小</strong>,园的左下角是128px的图片,右上角是224px</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-20/35059624.jpg" alt=""></p>
 <h2 id="4-2-开启TensorBoard可视化训练平台"><a href="#4-2-开启TensorBoard可视化训练平台" class="headerlink" title="4.2 开启TensorBoard可视化训练平台"></a>4.2 开启TensorBoard可视化训练平台</h2><p>在开始训练之前,我们需要先启动TensorBoard(Tensorflow配套的监督和检查工具).您可以用它来监督培训进度.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ tensorboard --logdir tf_files/training_summaries &amp;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ tensorboard --logdir tf_files/training_summaries &amp;</div></pre></td></tr></table></figure>
 <p>输出如下图所示</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/76176260.jpg" alt=""></p>
 <p>并且你可以通过浏览器访问 <a href="http://localhost:6006" target="_blank" rel="external">http://localhost:6006</a> 查看到TensorBoard的页面,在进行training的时候网页会自动显示训练进度</p>
@@ -276,7 +278,7 @@
 <h2 id="4-5-开始训练"><a href="#4-5-开始训练" class="headerlink" title="4.5 开始训练"></a>4.5 开始训练</h2><p>如同引言所属,ImageNet模型是具有百万个参数的网络,可以用来区分大量的物品,我们只是训练该神经网络的最后一次,所以训练将会在比较短的时间内结束.</p>
 <p>使用一下命令开始训练(注意–summaries_dir选项,该选项是用来将训练进度报告发送到TensorBoard用来显示训练进度的)</p>
 <p>如果遇到错误可以查看下文Topic的内容,如果觉得数据加载的过程太慢,可以考虑按4.4可选步骤直接使用处理好的数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在bash 和 gitbash中使用</span></div><div class="line">$ python -m scripts.retrain \</div><div class="line">  --bottleneck_dir=tf_files/bottlenecks \</div><div class="line">  --how_many_training_steps=500 \</div><div class="line">  --model_dir=tf_files/models/ \</div><div class="line">  --summaries_dir=tf_files/training_summaries/<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --output_graph=tf_files/retrained_graph.pb \</div><div class="line">  --output_labels=tf_files/retrained_labels.txt \</div><div class="line">  --architecture=<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --image_dir=tf_files/flower_photos</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ python -m scripts.retrain \</div><div class="line">  --bottleneck_dir=tf_files/bottlenecks \</div><div class="line">  --how_many_training_steps=500 \</div><div class="line">  --model_dir=tf_files/models/ \</div><div class="line">  --summaries_dir=tf_files/training_summaries/<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --output_graph=tf_files/retrained_graph.pb \</div><div class="line">  --output_labels=tf_files/retrained_labels.txt \</div><div class="line">  --architecture=<span class="string">"<span class="variable">$&#123;ARCHITECTURE&#125;</span>"</span> \</div><div class="line">  --image_dir=tf_files/flower_photos</div></pre></td></tr></table></figure>
 <p>该脚本将会下载预训练的模型,并在添加一个新的最后一层,训练您下载的花卉照片.</p>
 <p>数据处理</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/75367974.jpg" alt=""></p>
@@ -286,7 +288,7 @@
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/62969073.jpg" alt=""></p>
 <p>Topic1 : 如果您使用命令后出现下列错误信息,请重新输入IMAGE_SIZE和ARCHITECTURE,在不关闭Gitbash的基础上重新运行</p>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/33071831.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在bash 或者 gitbash中输入</span></div><div class="line">$ IMAGE_SIZE=224</div><div class="line">$ ARCHITECTURE=<span class="string">"mobilenet_0.50_<span class="variable">$&#123;IMAGE_SIZE&#125;</span>"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line">$ IMAGE_SIZE=224</div><div class="line">$ ARCHITECTURE=<span class="string">"mobilenet_0.50_<span class="variable">$&#123;IMAGE_SIZE&#125;</span>"</span></div></pre></td></tr></table></figure>
 <h2 id="5-使用再培训模型"><a href="#5-使用再培训模型" class="headerlink" title="5 使用再培训模型"></a>5 使用再培训模型</h2><p>在培训模型将会写入一下两个文件</p>
 <ul>
 <li><p>tf_files/retrained_graph.pb (从网络上下载的模型,以及刚才我们重新训练的花卉层)</p>
@@ -295,7 +297,7 @@
 </li>
 </ul>
 <p>你可以使用我们提供的 label_image.py , 您可以用他来测试你训练好的模型</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在 bash 和 Gitbash 上使用下面命令</span></div><div class="line"><span class="comment"># graph的参数是模型所在的位置</span></div><div class="line"><span class="comment"># image的参数是图片所在的位置</span></div><div class="line">$ python -m scripts.label_image \</div><div class="line">    --graph=tf_files/retrained_graph.pb  \</div><div class="line">    --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在Terminal 或者 GitBash 下进行操作</span></div><div class="line"><span class="comment"># graph的参数是模型所在的位置</span></div><div class="line"><span class="comment"># image的参数是图片所在的位置</span></div><div class="line">$ python -m scripts.label_image \</div><div class="line">    --graph=tf_files/retrained_graph.pb  \</div><div class="line">    --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg</div></pre></td></tr></table></figure>
 <p>你可能会得到如下结果,该结果表示,该图片为雏菊的可能性最高</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 输出结果</span></div><div class="line">daisy (score = 0.99071)</div><div class="line">sunflowers (score = 0.00595)</div><div class="line">dandelion (score = 0.00252)</div><div class="line">roses (score = 0.00049)</div><div class="line">tulips (score = 0.00032)</div></pre></td></tr></table></figure>
 <p><img src="http://ox0sjjwt5.bkt.clouddn.com/17-10-25/78200521.jpg" alt=""></p>
